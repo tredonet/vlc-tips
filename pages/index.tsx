@@ -15,8 +15,32 @@ const Home: NextPage = () => {
 
 function Map() {
   const center = useMemo(() => ({ lat: 39.468, lng: -0.359 }), []);
+  const styles = useMemo(() => ([
+      {
+        featureType: "poi",
+        elementType: "labels.icon",
+        stylers: [{ visibility: "off" }],
+      },
+      {
+        featureType: "transit",
+        elementType: "labels.icon",
+        stylers: [{ visibility: "off" }],
+      },
+      {
+        featureType: "road",
+        elementType: "labels.icon",
+        stylers: [{ visibility: "off" }],
+      }
+    ]
+  ), [])
+  const options = useMemo(() => ({
+    disableDefaultUI: true,
+    clickableIcons: false,
+    styles
+  }), []);
+
   return (
-    <GoogleMap zoom={14.9} center={center} mapContainerClassName="w-full h-screen">
+    <GoogleMap zoom={14.9} center={center} options={options} mapContainerClassName="w-full h-screen">
       <Marker position={center} />
     </GoogleMap>
   );
