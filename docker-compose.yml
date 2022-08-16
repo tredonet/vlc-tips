@@ -1,0 +1,12 @@
+version: '3.0'
+services:
+  db:
+    image: mongo
+    restart: always
+    container_name: vlc_tips_db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: development
+      MONGO_INITDB_DATABASE: vlctips
+    ports:
+      - "27017:27017"

@@ -1,4 +1,4 @@
-import { Document, Model, model, Schema } from "mongoose";
+import mongoose, { Document, Model, model, Schema } from "mongoose";
 
 type OpeningHoursPeriodDetail = {
     day: number
@@ -40,6 +40,5 @@ const LocationSchema = new Schema({
     website: { type: String, required: false }
 });
 
-//@ts-ignore
-const Location: Model<ILocation> = model("Location", LocationSchema);
+const Location  = mongoose.models.Location || model<ILocation>("Location", LocationSchema);
 export default Location;
