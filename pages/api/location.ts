@@ -5,7 +5,7 @@ import { apiHandler } from 'utils/apiHandler';
 class LocationController {
 
   @Get()
-  async listLocation() {
+  async listLocations() {
     return await Location.find();
   }
 

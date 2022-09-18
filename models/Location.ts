@@ -1,22 +1,5 @@
-import mongoose, { Document, Model, model, Schema } from "mongoose";
-
-type OpeningHoursPeriodDetail = {
-    day: number
-    time: string
-}
-
-type OpeningHoursPeriod = {
-    open: OpeningHoursPeriodDetail
-    close: OpeningHoursPeriodDetail
-}
-
-type OpeningHours = {
-    open_now: boolean
-    periods: OpeningHoursPeriod[]
-    weekday_text: string[]
-}
-
-type LocationType = 'Landmark' | 'Restaurant' | 'POI' | 'Venue'
+import mongoose, { Document, model, Schema } from "mongoose";
+import { LocationType, OpeningHours } from "types";
 
 interface ILocation extends Document {
     name: String
@@ -40,5 +23,5 @@ const LocationSchema = new Schema({
     website: { type: String, required: false }
 });
 
-const Location  = mongoose.models.Location || model<ILocation>("Location", LocationSchema);
+const Location = mongoose.models.Location || model<ILocation>("Location", LocationSchema);
 export default Location;

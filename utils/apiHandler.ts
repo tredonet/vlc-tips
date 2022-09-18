@@ -1,7 +1,7 @@
 
 import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
 import { HTTP_METHOD_TOKEN, HandlerMethod } from '../decorators';
-import connectDB from '../middlewares/db';
+import connectDB from 'middlewares/db';
 
 export function apiHandler(cls: new () => any): NextApiHandler {
   const instance = new cls();
@@ -22,6 +22,7 @@ export function apiHandler(cls: new () => any): NextApiHandler {
       return notFound(req, res);
     }
     await connectDB();
+    
     return methodFn.call(instance, req, res);
   };
 }

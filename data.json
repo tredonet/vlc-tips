@@ -1,0 +1,402 @@
+[
+    {
+        "name": "Mercat Central",
+        "type": "POI",
+        "description": "description",
+        "geometry": {
+            "lat": 39.47346898350782,
+            "lng": -0.3790776147723494
+        },
+        "mapsUrl": "https://goo.gl/maps/MZVzW9nnJvWN5eYk8"
+    },
+    {
+        "name": "El Carme",
+        "type": "POI",
+        "description": "description",
+        "geometry": {
+            "lat": 39.4791549,
+            "lng": -0.3817505
+        },
+        "mapsUrl": "https://goo.gl/maps/DSHMV4vrTwq2ShGA8"
+    },
+    {
+        "name": "Ciudad de las Artes y Ciencas",
+        "type": "POI",
+        "description": "description",
+        "geometry": {
+            "lat": 39.4564821763615,
+            "lng": -0.3531618926327128
+        },
+        "mapsUrl": "https://goo.gl/maps/Nbt79qDBeJeN2nyM6"
+    },
+    {
+        "name": "Turia",
+        "type": "POI",
+        "description": "description",
+        "geometry": {
+            "lat": 39.478144401259414,
+            "lng": -0.3706879468701015
+        },
+        "mapsUrl": "https://goo.gl/maps/vpNzkP1boTXeFhxr7"
+    },
+    {
+        "name": "Bike Guy VLC",
+        "type": "POI",
+        "description": "description",
+        "geometry": {
+            "lat": 39.479107329592175,
+            "lng": -0.3769137154514255
+        },
+        "mapsUrl": "https://g.page/bikeguyvlc"
+    },
+    {
+        "name": "Oceanogràfic",
+        "type": "POI",
+        "description": "description",
+        "geometry": {
+            "lat": 39.45299929911122,
+            "lng": -0.34701101256084327
+        },
+        "mapsUrl": "https://goo.gl/maps/EyJJFxT1CtTv3QWD7"
+    },
+    {
+        "name": "BioParc",
+        "type": "POI",
+        "description": "description",
+        "geometry": {
+            "lat": 39.478122509501134,
+            "lng": -0.4075960241763879
+        },
+        "mapsUrl": "https://goo.gl/maps/DS6RJ17kWHQC5Yfm9"
+    },
+    {
+        "name": "Black Turtle",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46952804372402,
+            "lng": -0.3695534724098339
+        },
+        "mapsUrl": "https://goo.gl/maps/RZ6WipcKmxcieeDm8"
+    },
+    {
+        "name": "Hundred Burgers",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.47108613180027,
+            "lng": -0.37797531490941033
+        },
+        "mapsUrl": "https://goo.gl/maps/iUCJuXkPrM3JSVRQ6"
+    },
+    {
+        "name": "Amor Amargo",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46240180315856,
+            "lng": -0.372265806319342
+        },
+        "mapsUrl": "https://goo.gl/maps/4Wi4btbLgVRvTgjY7"
+    },
+    {
+        "name": "Boatella Tapas",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.474242518604704,
+            "lng": -0.3782892516978014
+        },
+        "mapsUrl": "https://goo.gl/maps/SiKe4t95zqhzfLz78"
+    },
+    {
+        "name": "Tasca Angel",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.47510958956594,
+            "lng": -0.37757043490916997
+        },
+        "mapsUrl": "https://g.page/victorarenasvergara?share"
+    },
+    {
+        "name": "Mare Meua Bar de Tapas",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.461979389139216,
+            "lng": -0.3729228082654095
+        },
+        "mapsUrl": "https://g.page/MareMeua"
+    },
+    {
+        "name": "Casa Carmela",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.48233808871991,
+            "lng": -0.32579038089786955
+        },
+        "mapsUrl": "https://goo.gl/maps/SvyWMJzz7geEg9vu6"
+    },
+    {
+        "name": "Bocadella Tapas",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.474856390982985,
+            "lng": -0.3463205504208082
+        },
+        "mapsUrl": "https://g.page/bocadella"
+    },
+    {
+        "name": "Saona",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.467765448593084,
+            "lng": -0.36865644631382555
+        },
+        "mapsUrl": "https://goo.gl/maps/6ybfNS5EVEjGSp7k8"
+    },
+    {
+        "name": "Tagomago",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.472123370331126,
+            "lng": -0.3737684669826115
+        },
+        "mapsUrl": "https://goo.gl/maps/grP8Srh9ybTa9gc26"
+    },
+    {
+        "name": "Copenhagen",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46090749327891,
+            "lng": -0.37362009795752615
+        },
+        "mapsUrl": "https://g.page/restaurantecopenhagen"
+    },
+    {
+        "name": "Voltereta",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46792509994666,
+            "lng": -0.36753322450285447
+        },
+        "mapsUrl": "https://g.page/volteretavalencia"
+    },
+    {
+        "name": "Kawori",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46340456482018,
+            "lng": -0.37238823245082453
+        },
+        "mapsUrl": "https://goo.gl/maps/8U6c3W7C7dKKzKNbA"
+    },
+    {
+        "name": "La Chingada",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46237592328059,
+            "lng": -0.3728143258224873
+        },
+        "mapsUrl": "https://goo.gl/maps/NXfDdTuhVjAbpWPV8"
+    },
+    {
+        "name": "Gave MX",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.460814460581325,
+            "lng": -0.3746999536998361
+        },
+        "mapsUrl": "https://goo.gl/maps/QT87Skh42Qw3QQtj8"
+    },
+    {
+        "name": "Rey Taco",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.474719990704294,
+            "lng": -0.37640916378678907
+        },
+        "mapsUrl": "https://goo.gl/maps/Z5Vjg1CaeAvY1YpL7"
+    },
+    {
+        "name": "Osaka II",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46070924379845,
+            "lng": -0.35190842758027696
+        },
+        "mapsUrl": "https://goo.gl/maps/jisbHNMB5BYCV2cF8"
+    },
+    {
+        "name": "Swagat II",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.45810086655659,
+            "lng": -0.3468907937643061
+        },
+        "mapsUrl": "https://goo.gl/maps/jWA3GA7PsvtqxNLM6"
+    },
+    {
+        "name": "Kreas",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.45862407835369,
+            "lng": -0.34916966079311745
+        },
+        "mapsUrl": "https://goo.gl/maps/mzWbSnhyiXqW3sp58"
+    },
+    {
+        "name": "Mercabanyal",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.472257425328905,
+            "lng": -0.32566337823306213
+        },
+        "mapsUrl": "https://g.page/mercabanyal"
+    },
+    {
+        "name": "Boa Beach",
+        "type": "Restaurant",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46546643096059,
+            "lng": -0.32322310844339164
+        },
+        "mapsUrl": "https://g.page/boabeachvalencia"
+    },
+    {
+        "name": "Marina Beach Club",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46314391947226,
+            "lng": -0.3215948370547072
+        },
+        "mapsUrl": ""
+    },
+    {
+        "name": "Barcelo",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.46096409153215,
+            "lng": -0.3528155396941902
+        },
+        "mapsUrl": "https://g.page/BarceloValencia"
+    },
+    {
+        "name": "La fabrica de Hielo",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.469838121491975,
+            "lng": -0.3249373661957395
+        },
+        "mapsUrl": "https://goo.gl/maps/FUnMBqXmE1jh1rxw8"
+    },
+    {
+        "name": "Cafe de las Horas",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.47733201735852,
+            "lng": -0.3755589191172937
+        },
+        "mapsUrl": "https://goo.gl/maps/rKc6sGpwpHZSGKko9"
+    },
+    {
+        "name": "Radiocity",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.4748297466524,
+            "lng": -0.38127853784750426
+        },
+        "mapsUrl": "https://g.page/radiocityvlc"
+    },
+    {
+        "name": "Mya",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.45534976334197,
+            "lng": -0.35362358504467756
+        },
+        "mapsUrl": "https://goo.gl/maps/dFDs8MTtiaDbX33H7"
+    },
+    {
+        "name": "Rumbo 144",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.47261239591321,
+            "lng": -0.34450919266463326
+        },
+        "mapsUrl": "https://goo.gl/maps/oZpozLtmCHdRTW4m7"
+    },
+    {
+        "name": "Oven Club",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.463923049535644,
+            "lng": -0.3759724359986186
+        },
+        "mapsUrl": "https://g.page/ovenclubvalencia"
+    },
+    {
+        "name": "Comitee",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.45897064644518,
+            "lng": -0.3834392239476775
+        },
+        "mapsUrl": "https://g.page/committeevalencia"
+    },
+    {
+        "name": "Carribean",
+        "type": "Venue",
+        "description": "description",
+        "geometry": {
+            "lat": 39.473952094740476,
+            "lng": -0.3558924814392566
+        },
+        "mapsUrl": "https://g.page/Caribbeansaragon-valencia"
+    },
+    {
+        "name": "Montenejos",
+        "type": "Landmark",
+        "description": "description",
+        "geometry": {
+            "lat": 40.0684672,
+            "lng": -0.52601
+        },
+        "mapsUrl": "https://goo.gl/maps/6gHbz7ixm37hNTk79"
+    },
+    {
+        "name": "Calpe",
+        "type": "Landmark",
+        "description": "description",
+        "geometry": {
+            "lat": 38.6515708,
+            "lng": 0.0133355
+        },
+        "mapsUrl": "https://goo.gl/maps/uV7GzVnzUpevh1Zp7"
+    }
+]
