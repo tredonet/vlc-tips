@@ -1,7 +1,7 @@
 [
     {
         "name": "Mercat Central",
-        "type": "POI",
+        "kind": "POI",
         "description": "description",
         "geometry": {
             "lat": 39.47346898350782,
@@ -11,7 +11,7 @@
     },
     {
         "name": "El Carme",
-        "type": "POI",
+        "kind": "POI",
         "description": "description",
         "geometry": {
             "lat": 39.4791549,
@@ -21,7 +21,7 @@
     },
     {
         "name": "Ciudad de las Artes y Ciencas",
-        "type": "POI",
+        "kind": "POI",
         "description": "description",
         "geometry": {
             "lat": 39.4564821763615,
@@ -31,7 +31,7 @@
     },
     {
         "name": "Turia",
-        "type": "POI",
+        "kind": "POI",
         "description": "description",
         "geometry": {
             "lat": 39.478144401259414,
@@ -41,7 +41,7 @@
     },
     {
         "name": "Bike Guy VLC",
-        "type": "POI",
+        "kind": "POI",
         "description": "description",
         "geometry": {
             "lat": 39.479107329592175,
@@ -51,7 +51,7 @@
     },
     {
         "name": "Oceanogràfic",
-        "type": "POI",
+        "kind": "POI",
         "description": "description",
         "geometry": {
             "lat": 39.45299929911122,
@@ -61,7 +61,7 @@
     },
     {
         "name": "BioParc",
-        "type": "POI",
+        "kind": "POI",
         "description": "description",
         "geometry": {
             "lat": 39.478122509501134,
@@ -71,7 +71,7 @@
     },
     {
         "name": "Black Turtle",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.46952804372402,
@@ -81,7 +81,7 @@
     },
     {
         "name": "Hundred Burgers",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.47108613180027,
@@ -91,7 +91,7 @@
     },
     {
         "name": "Amor Amargo",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.46240180315856,
@@ -101,7 +101,7 @@
     },
     {
         "name": "Boatella Tapas",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.474242518604704,
@@ -111,7 +111,7 @@
     },
     {
         "name": "Tasca Angel",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.47510958956594,
@@ -121,7 +121,7 @@
     },
     {
         "name": "Mare Meua Bar de Tapas",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.461979389139216,
@@ -131,7 +131,7 @@
     },
     {
         "name": "Casa Carmela",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.48233808871991,
@@ -141,7 +141,7 @@
     },
     {
         "name": "Bocadella Tapas",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.474856390982985,
@@ -151,7 +151,7 @@
     },
     {
         "name": "Saona",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.467765448593084,
@@ -161,7 +161,7 @@
     },
     {
         "name": "Tagomago",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.472123370331126,
@@ -171,7 +171,7 @@
     },
     {
         "name": "Copenhagen",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.46090749327891,
@@ -181,7 +181,7 @@
     },
     {
         "name": "Voltereta",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.46792509994666,
@@ -191,7 +191,7 @@
     },
     {
         "name": "Kawori",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.46340456482018,
@@ -201,7 +201,7 @@
     },
     {
         "name": "La Chingada",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.46237592328059,
@@ -211,7 +211,7 @@
     },
     {
         "name": "Gave MX",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.460814460581325,
@@ -221,7 +221,7 @@
     },
     {
         "name": "Rey Taco",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.474719990704294,
@@ -231,7 +231,7 @@
     },
     {
         "name": "Osaka II",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.46070924379845,
@@ -241,7 +241,7 @@
     },
     {
         "name": "Swagat II",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.45810086655659,
@@ -251,7 +251,7 @@
     },
     {
         "name": "Kreas",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.45862407835369,
@@ -261,7 +261,7 @@
     },
     {
         "name": "Mercabanyal",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.472257425328905,
@@ -271,7 +271,7 @@
     },
     {
         "name": "Boa Beach",
-        "type": "Restaurant",
+        "kind": "Restaurant",
         "description": "description",
         "geometry": {
             "lat": 39.46546643096059,
@@ -281,7 +281,7 @@
     },
     {
         "name": "Marina Beach Club",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.46314391947226,
@@ -291,7 +291,7 @@
     },
     {
         "name": "Barcelo",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.46096409153215,
@@ -301,7 +301,7 @@
     },
     {
         "name": "La fabrica de Hielo",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.469838121491975,
@@ -311,7 +311,7 @@
     },
     {
         "name": "Cafe de las Horas",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.47733201735852,
@@ -321,7 +321,7 @@
     },
     {
         "name": "Radiocity",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.4748297466524,
@@ -331,7 +331,7 @@
     },
     {
         "name": "Mya",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.45534976334197,
@@ -341,7 +341,7 @@
     },
     {
         "name": "Rumbo 144",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.47261239591321,
@@ -351,7 +351,7 @@
     },
     {
         "name": "Oven Club",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.463923049535644,
@@ -361,7 +361,7 @@
     },
     {
         "name": "Comitee",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.45897064644518,
@@ -371,7 +371,7 @@
     },
     {
         "name": "Carribean",
-        "type": "Venue",
+        "kind": "Venue",
         "description": "description",
         "geometry": {
             "lat": 39.473952094740476,
@@ -381,7 +381,7 @@
     },
     {
         "name": "Montenejos",
-        "type": "Landmark",
+        "kind": "Landmark",
         "description": "description",
         "geometry": {
             "lat": 40.0684672,
@@ -391,7 +391,7 @@
     },
     {
         "name": "Calpe",
-        "type": "Landmark",
+        "kind": "Landmark",
         "description": "description",
         "geometry": {
             "lat": 38.6515708,

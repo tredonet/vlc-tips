@@ -1,6 +1,6 @@
 import Location from 'models/Location';
 import { Body, Get, Post } from 'decorators';
-import { apiHandler } from 'utils/apiHandler';
+import { apiHandler } from 'utils';
 
 class LocationController {
 

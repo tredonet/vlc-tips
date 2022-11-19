@@ -15,15 +15,21 @@ export type OpeningHours = {
     weekday_text: string[]
 }
 
-export type LocationType = 'Landmark' | 'Restaurant' | 'POI' | 'Venue';
+export type LocationKind = 'Landmark' | 'Restaurant' | 'POI' | 'Venue';
 
-export interface Location{
-    name: String
-    type: LocationType
-    description: String
+export type LocationType = {
+    typeName: string
+    typeValue: string
+}
+
+export interface Location {
+    name: string
+    kind: LocationKind
+    description: string
     geometry: google.maps.LatLngAltitudeLiteral
+    type?: LocationType
     openingHours?: OpeningHours
-    placeId?: String
-    mapsUrl: String
-    website?: String
+    placeId?: string
+    mapsUrl: string
+    website?: string
 }

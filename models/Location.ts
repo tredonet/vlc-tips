@@ -1,20 +1,20 @@
 import mongoose, { Document, model, Schema } from "mongoose";
-import { LocationType, OpeningHours } from "types";
+import { LocationKind, OpeningHours } from "types";
 
 interface ILocation extends Document {
-    name: String
-    type: LocationType
-    description: String
+    name: string
+    kind: LocationKind
+    description: string
     geometry: google.maps.LatLngAltitudeLiteral
     openingHours: OpeningHours
-    placeId: String
-    mapsUrl: String
-    website: String
+    placeId: string
+    mapsUrl: string
+    website: string
 }
 
 const LocationSchema = new Schema({
     name: { type: String, required: true },
-    type: { type: String, requires: true },
+    kind: { type: String, requires: true },
     description: { type: String, required: true },
     geometry: { type: Object, required: true },
     openingHours: { type: Object, required: false },
