@@ -1,6 +1,6 @@
-type Parameter = 'query' | 'params' | 'body' | 'request' | 'response';
+type Parameter = "query" | "params" | "body" | "request" | "response";
 
-export const PARAMETER_TOKEN = Symbol('Parameters');
+export const PARAMETER_TOKEN = Symbol("Parameters");
 export interface MetaParameter {
   index: number;
   location: Parameter;
@@ -17,26 +17,24 @@ function decorate(location: Parameter, name?: string) {
 
 export function Query(): ParameterDecorator;
 export function Query(name?: string): ParameterDecorator {
-  return decorate('query', name);
+  return decorate("query", name);
 }
 
 export function Param(name: string): ParameterDecorator {
-  return decorate('params', name);
+  return decorate("params", name);
 }
 
 /** Returns the request body. */
 export function Body(): ParameterDecorator {
-  return decorate('body');
+  return decorate("body");
 }
-
 
 /** Returns the `req` object. */
 export function Request(): ParameterDecorator {
-  return decorate('request');
+  return decorate("request");
 }
-
 
 /** Returns the `res` object. */
 export function Response(): ParameterDecorator {
-  return decorate('response');
+  return decorate("response");
 }

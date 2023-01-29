@@ -1,9 +1,8 @@
-import Location from 'models/Location';
-import { Body, Get, Post } from 'decorators';
-import { apiHandler } from 'utils';
+import Location from "models/Location";
+import { Body, Get, Post } from "decorators";
+import { apiHandler } from "utils";
 
 class LocationController {
-
   @Get()
   async listLocations() {
     return await Location.find();

@@ -1,7 +1,6 @@
-
-import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
-import { HTTP_METHOD_TOKEN, HandlerMethod } from '../decorators';
-import connectDB from 'middlewares/db';
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import { HTTP_METHOD_TOKEN, HandlerMethod } from "../decorators";
+import connectDB from "middlewares/db";
 
 export function apiHandler(cls: new () => any): NextApiHandler {
   const instance = new cls();
@@ -12,7 +11,7 @@ export function apiHandler(cls: new () => any): NextApiHandler {
     }
 
     const methods: Array<HandlerMethod> = Reflect.getMetadata(HTTP_METHOD_TOKEN, cls);
-    const method = methods.find(f => f.verb === req.method);
+    const method = methods.find((f) => f.verb === req.method);
     if (!method) {
       return notFound(req, res);
     }
@@ -22,7 +21,7 @@ export function apiHandler(cls: new () => any): NextApiHandler {
       return notFound(req, res);
     }
     await connectDB();
-    
+
     return methodFn.call(instance, req, res);
   };
 }
@@ -30,7 +29,7 @@ export function apiHandler(cls: new () => any): NextApiHandler {
 function notFound(req: NextApiRequest, res: NextApiResponse): void {
   return res.status(404).json({
     statusCode: 404,
-    message: `Cannot ${req.method} ${req.url?.split('?')?.[0]}`,
-    error: 'Not Found'
+    message: `Cannot ${req.method} ${req.url?.split("?")?.[0]}`,
+    error: "Not Found",
   });
 }

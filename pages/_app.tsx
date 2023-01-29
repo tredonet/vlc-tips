@@ -1,6 +1,6 @@
-import '../styles/globals.css';
-import { DataProvider } from 'providers/provider';
-import type { AppProps } from 'next/app';
+import "../styles/globals.css";
+import { DataProvider } from "providers/provider";
+import type { AppProps } from "next/app";
 
 function App({ Component, pageProps }: AppProps) {
   return (

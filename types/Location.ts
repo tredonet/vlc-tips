@@ -1,35 +1,32 @@
-
 export type OpeningHoursPeriodDetail = {
-    day: number
-    time: string
-}
+  day: number;
+  time: string;
+};
 
 export type OpeningHoursPeriod = {
-    open: OpeningHoursPeriodDetail
-    close: OpeningHoursPeriodDetail
-}
+  open: OpeningHoursPeriodDetail;
+  close: OpeningHoursPeriodDetail;
+};
 
 export type OpeningHours = {
-    open_now: boolean
-    periods: OpeningHoursPeriod[]
-    weekday_text: string[]
-}
+  open_now: boolean;
+  periods: OpeningHoursPeriod[];
+  weekday_text: string[];
+};
 
-export type LocationKind = 'Landmark' | 'Restaurant' | 'POI' | 'Venue';
+export type LocationKind = "Landmark" | "Restaurant" | "POI" | "Venue";
 
-export type LocationType = {
-    typeName: string
-    typeValue: string
-}
+export type LocationType = { [key: string]: string };
 
 export interface Location {
-    name: string
-    kind: LocationKind
-    description: string
-    geometry: google.maps.LatLngAltitudeLiteral
-    type?: LocationType
-    openingHours?: OpeningHours
-    placeId?: string
-    mapsUrl: string
-    website?: string
+  name: string;
+  kind: LocationKind;
+  description: string;
+  tags: string[];
+  geometry: google.maps.LatLngAltitudeLiteral;
+  type?: LocationType;
+  openingHours?: OpeningHours;
+  placeId?: string;
+  mapsUrl: string;
+  website?: string;
 }

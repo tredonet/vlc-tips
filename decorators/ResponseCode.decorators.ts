@@ -1,5 +1,5 @@
-import 'reflect-metadata';
-export const HTTP_CODE_TOKEN = Symbol('ReponseCode');
+import "reflect-metadata";
+export const HTTP_CODE_TOKEN = Symbol("ReponseCode");
 
 export function ResponseCode(code: number): MethodDecorator {
   return function (target: object, propertyKey: string | symbol) {
