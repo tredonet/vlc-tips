@@ -1,47 +1,67 @@
-import { useLocation } from "hooks";
-import { capitalize } from "utils";
+import { useTips } from "hooks";
+import { capitalize, uniqueValues } from "utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { Location } from "types";
-import { TipsTitle, TipsListContainer, TipsListItem, Tag } from "components";
+import { Tip, TipKind } from "types";
+import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag } from "components";
 import { MiniMap } from "./MiniMap";
-import pin from "../public/icons/pin.svg";
-import vial from "../public/icons/vial.svg";
-import eye from "../public/icons/eye.svg";
-import information from "../public/icons/information.svg";
+import Nightlife from "../public/icons/nightlife.svg";
+import Restaurant from "../public/icons/restaurant.svg";
+import Sightseeing from "../public/icons/sightseeing.svg";
+import Landmark from "../public/icons/landmark.svg";
+import Coffee from "../public/icons/coffee.svg";
+import Market from "../public/icons/market.svg";
+import Snacks from "../public/icons/snacks.svg";
+import Eye from "../public/icons/eye.svg";
+import { useState } from "react";
 
 export const Tips: React.FC = () => {
-  const { locations, selectedCategory, setSelectedCategory } = useLocation();
+  const [filter, setFilter] = useState<string | undefined>();
+  const { tips, selectedCategory, setSelectedCategory } = useTips();
+  const tags = ["Spanish", "Drinks", "Outdoors", "Coffee", "Paella", "Live Music"];
+  const categories = uniqueValues(tips?.map((tip) => tip.kind) || []);
+  const icon = (kind: TipKind) => {
+    const icons = {
+      Nightlife,
+      Restaurant,
+      Sightseeing,
+      Landmark,
+      Coffee,
+      Snacks,
+      Market,
+    };
+    return icons[kind];
+  };
   return (
     <>
-      <TipsList
-        title={"Restaurants"}
-        icon={pin}
-        expanded={"Restaurant" === selectedCategory}
-        onClick={() => setSelectedCategory("Restaurant")}
-        tips={locations?.filter((loc) => loc.kind === "Restaurant")}
-      />
-      <TipsList
-        title={"Nightlife"}
-        icon={vial}
-        expanded={"Venue" === selectedCategory}
-        onClick={() => setSelectedCategory("Venue")}
-        tips={locations?.filter((loc) => loc.kind === "Venue")}
-      />
-      <TipsList
-        title={"Sightseeing"}
-        icon={eye}
-        expanded={"POI" === selectedCategory}
-        onClick={() => setSelectedCategory("POI")}
-        tips={locations?.filter((loc) => loc.kind === "POI")}
-      />
-      <TipsList
-        title={"Getting Around"}
-        icon={information}
-        expanded={"Landmark" === selectedCategory}
-        onClick={() => setSelectedCategory("Landmark")}
-        tips={locations?.filter((loc) => loc.kind === "Landmark")}
-      />
+      <div className="flex flex-wrap my-5 mx-3">
+        {tags.map((tag) => (
+          <ClickTag
+            text={tag}
+            onClick={() => setFilter(filter === tag ? undefined : tag)}
+            highlighted={tag === filter}
+          />
+        ))}
+      </div>
+      {!filter &&
+        categories.map((category) => (
+          <TipsList
+            title={category}
+            icon={icon(category)}
+            expanded={category === selectedCategory}
+            onClick={() => setSelectedCategory(category)}
+            tips={tips?.filter((tip) => tip.kind === category)}
+          />
+        ))}
+      {filter && (
+        <TipsList
+          title={filter}
+          icon={Eye}
+          expanded={true}
+          onClick={null}
+          tips={tips?.filter((tip) => tip.tags.includes(filter))}
+        />
+      )}
     </>
   );
 };
@@ -49,13 +69,13 @@ export const Tips: React.FC = () => {
 type TipsProps = {
   title: string;
   icon: SVGElement;
-  tips?: Location[];
+  tips?: Tip[];
   expanded: boolean;
   onClick: any;
 };
 
 const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick }) => {
-  const { selectedLocation, setSelectedLocation } = useLocation();
+  const { selectedTip, setSelectedTip } = useTips();
 
   return (
     <>
@@ -66,12 +86,12 @@ const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick })
         <TipsListContainer className="cursor-pointer">
           {tips &&
             tips.map((tip) => {
-              const selected = selectedLocation?.name === tip.name;
+              const selected = selectedTip?.name === tip.name;
               return (
-                <TipsListItem onClick={() => setSelectedLocation(tip)}>
+                <TipsListItem onClick={() => setSelectedTip(tip)}>
                   {tip.name}
                   <FontAwesomeIcon icon={selected ? faAngleDown : faAngleLeft} className="float-right mt-1" />
-                  {selected && <ItemDescription location={tip} />}
+                  {selected && <ItemDescription tip={tip} />}
                 </TipsListItem>
               );
             })}
@@ -81,22 +101,22 @@ const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick })
   );
 };
 
-const ItemDescription: React.FC<{ location: Location }> = ({ location }) => {
+const ItemDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
   return (
     <div className="py-2 text-sm">
-      {location.type &&
-        Object.entries(location.type).map(([key, val]: any) => (
+      {tip.type &&
+        Object.entries(tip.type).map(([key, val]: any) => (
           <div>
             {capitalize(key)}: {val}
           </div>
         ))}
-      <div className="text-xs my-2">{location.description}</div>
-      <div className="flex my-1">
-        {location.tags.map((tag) => (
+      <div className="text-xs my-2">{tip.description}</div>
+      <div className="flex flex-wrap my-1">
+        {tip.tags.map((tag) => (
           <Tag text={tag} />
         ))}
       </div>
-      <MiniMap location={location} />
+      <MiniMap tip={tip} />
     </div>
   );
 };

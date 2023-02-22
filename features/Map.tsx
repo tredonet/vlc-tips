@@ -1,14 +1,14 @@
 import { useLoadScript, Marker as _Marker, GoogleMap, InfoWindow as _InfoWindow } from "@react-google-maps/api";
-import { useLocation } from "hooks";
+import { useTips } from "hooks";
 import { useMemo } from "react";
-import { Location } from "types";
+import { Tip } from "types";
 
 
 
 export function Map() {
-  const { locations, selectedLocation, setSelectedLocation, setSelectedCategory } = useLocation();
-  const center = useMemo(() => selectedLocation?.geometry || { lat: 39.468, lng: -0.359 }, [selectedLocation]);
-  const zoom = useMemo(() => (selectedLocation ? 16 : 14.9), [selectedLocation]);
+  const { tips, selectedTip, setSelectedTip, setSelectedCategory } = useTips();
+  const center = useMemo(() => selectedTip?.geometry || { lat: 39.468, lng: -0.359 }, [selectedTip]);
+  const zoom = useMemo(() => (selectedTip ? 16 : 14.9), [selectedTip]);
   const styles = useMemo(
     () => [
       {
@@ -40,34 +40,37 @@ export function Map() {
   );
 
   type MarkerProps = {
-    location: Location;
+    tip: Tip;
   };
 
-  const onClickMarker = (location: Location) => {
-    setSelectedLocation(location);
-    setSelectedCategory(location.kind);
+  const onClickMarker = (tip: Tip) => {
+    setSelectedTip(tip);
+    setSelectedCategory(tip.kind);
   };
 
-  const Marker: React.FC<MarkerProps> = ({ location }) => {
-    const iconMap = {
-      Venue: "icons/bar.svg",
-      Restaurant: "icons/restaurant.svg",
-      POI: "icons/studio.png",
-      Landmark: "icons/bar.png",
+  const Marker: React.FC<MarkerProps> = ({ tip }) => {
+    const markerMap = {
+      Nightlife: "icons/nightlifeMarker.svg",
+      Restaurant: "icons/restaurantMarker.svg",
+      Sightseeing: "icons/sightseeingMarker.svg",
+      Landmark: "icons/landmarkMarker.png",
+      Coffee: "icons/restaurantMarker.svg",
+      Snacks: "icons/restaurantMarker.svg",
+      Market: "icons/restaurantMarker.svg"
     };
-    const scaledSize = new google.maps.Size(48, 48);
+    const scaledSize = new google.maps.Size(32, 32);
     return (
       <_Marker
-        position={location.geometry}
-        icon={{ url: iconMap[location.kind], scaledSize }}
-        onClick={() => onClickMarker(location)}
-        animation={location.name === selectedLocation?.name ? google.maps.Animation.BOUNCE : undefined}
+        position={tip.geometry}
+        icon={{ url: markerMap[tip.kind], scaledSize }}
+        onClick={() => onClickMarker(tip)}
+        animation={tip.name === selectedTip?.name ? google.maps.Animation.BOUNCE : undefined}
       />
     );
   };
   return (
     <GoogleMap zoom={zoom} center={center} options={options} mapContainerClassName="w-full h-screen hidden sm:block">
-      {locations && locations.map((location: Location) => <Marker location={location} />)}
+      {tips && tips.map((tip: Tip) => <Marker tip={tip} />)}
     </GoogleMap>
   );
 }

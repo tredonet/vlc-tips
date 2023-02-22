@@ -1,10 +1,11 @@
 import mongoose, { Document, model, Schema } from "mongoose";
-import { Location as _Location } from "types";
+import { Tip as _Tip } from "types";
 
-interface ILocation extends _Location, Document {}
+interface ITip extends _Tip, Document {}
 
-const LocationSchema = new Schema({
+const TipSchema = new Schema({
   name: { type: String, required: true },
+  listId: { type: String, required: true },
   kind: { type: String, requires: true },
   description: { type: String, required: true },
   tags: { type: [String], required: true },
@@ -19,5 +20,5 @@ const LocationSchema = new Schema({
   website: { type: String, required: false },
 });
 
-const Location = mongoose.models.Location || model<ILocation>("Location", LocationSchema);
-export default Location;
+const Tip = mongoose.models.Tip || model<ITip>("Tip", TipSchema);
+export default Tip;

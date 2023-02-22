@@ -1,37 +1,42 @@
 import React, { ComponentProps, createContext, Dispatch, useEffect, useState } from "react";
-import { Location, LocationKind } from "types";
+import { Tip, TipKind } from "types";
 
 export type DataContextProps = {
-  locations?: Location[];
-  reloadLocations: () => void;
-  selectedLocation?: Location;
-  setSelectedLocation: Dispatch<Location | undefined>;
-  selectedCategory: LocationKind;
-  setSelectedCategory: Dispatch<LocationKind>;
+  tips?: Tip[];
+  listId: string;
+  setListId: (listId: string) => void;
+  reloadTips: () => void;
+  selectedTip?: Tip;
+  setSelectedTip: Dispatch<Tip | undefined>;
+  selectedCategory: TipKind;
+  setSelectedCategory: Dispatch<TipKind>;
 };
 
 const DataContext = createContext<DataContextProps>({} as DataContextProps);
 export default DataContext;
 export const DataProvider: React.FC<ComponentProps<"div">> = ({ children }) => {
-  const [locations, setLocations] = useState<Location[]>([]);
-  const [selectedLocation, setSelectedLocation] = useState<Location>();
-  const [selectedCategory, setSelectedCategory] = useState<LocationKind>("Restaurant");
+  const [tips, setTips] = useState<Tip[]>([]);
+  const [selectedTip, setSelectedTip] = useState<Tip>();
+  const [listId, setListId] = useState("Raphael");
+  const [selectedCategory, setSelectedCategory] = useState<TipKind>("Restaurant");
 
-  useEffect(() => fetchLocations(), []);
+  useEffect(() => fetchTips(), []);
 
-  const fetchLocations = () => {
-    fetch("/api/location")
+  const fetchTips = () => {
+    fetch(`/api/tip?listId=${listId}`)
       .then((res) => res.json())
-      .then((res) => setLocations(res.filter((location: Location) => location.kind !== "Landmark")))
+      .then((res) => setTips(res.filter((tip: Tip) => tip.kind !== "Landmark")))
       .catch((e) => console.log(e.message));
   };
 
   const values = {
-    locations,
-    reloadLocations: (): void => fetchLocations(),
-    selectedLocation,
-    setSelectedLocation: (location: Location | undefined): void =>
-      setSelectedLocation(location === selectedLocation ? undefined : location),
+    tips,
+    listId,
+    setListId,
+    reloadTips: (): void => fetchTips(),
+    selectedTip,
+    setSelectedTip: (tip: Tip | undefined): void =>
+      setSelectedTip(tip === selectedTip ? undefined : tip),
     selectedCategory,
     setSelectedCategory,
   };

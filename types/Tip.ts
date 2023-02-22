@@ -14,17 +14,18 @@ export type OpeningHours = {
   weekday_text: string[];
 };
 
-export type LocationKind = "Landmark" | "Restaurant" | "POI" | "Venue";
+export type TipKind = "Landmark" | "Restaurant" | "Sightseeing" | "Nightlife" | "Snacks" | "Coffee" | "Market";
 
-export type LocationType = { [key: string]: string };
+export type TipType = { [key: string]: string };
 
-export interface Location {
+export interface Tip {
   name: string;
-  kind: LocationKind;
+  kind: TipKind;
+  listId: string;
   description: string;
   tags: string[];
   geometry: google.maps.LatLngAltitudeLiteral;
-  type?: LocationType;
+  type?: TipType;
   openingHours?: OpeningHours;
   placeId?: string;
   mapsUrl: string;
