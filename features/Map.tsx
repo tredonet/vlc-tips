@@ -54,11 +54,11 @@ export function Map() {
       Restaurant: "icons/restaurantMarker.svg",
       Sightseeing: "icons/sightseeingMarker.svg",
       Landmark: "icons/landmarkMarker.png",
-      Coffee: "icons/restaurantMarker.svg",
-      Snacks: "icons/restaurantMarker.svg",
-      Market: "icons/restaurantMarker.svg"
+      Coffee: "icons/coffeeMarker.svg",
+      Snacks: "icons/snacksMarker.svg",
+      Market: "icons/marketMarker.svg"
     };
-    const scaledSize = new google.maps.Size(32, 32);
+    const scaledSize = new google.maps.Size(48, 48);
     return (
       <_Marker
         position={tip.geometry}

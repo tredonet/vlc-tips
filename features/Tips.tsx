@@ -3,7 +3,7 @@ import { capitalize, uniqueValues } from "utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { Tip, TipKind } from "types";
-import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag } from "components";
+import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag, Button } from "components";
 import { MiniMap } from "./MiniMap";
 import Nightlife from "../public/icons/nightlife.svg";
 import Restaurant from "../public/icons/restaurant.svg";
@@ -13,6 +13,7 @@ import Coffee from "../public/icons/coffee.svg";
 import Market from "../public/icons/market.svg";
 import Snacks from "../public/icons/snacks.svg";
 import Eye from "../public/icons/eye.svg";
+import Heart from "../public/icons/heart.svg";
 import { useState } from "react";
 
 export const Tips: React.FC = () => {
@@ -62,6 +63,12 @@ export const Tips: React.FC = () => {
           tips={tips?.filter((tip) => tip.tags.includes(filter))}
         />
       )}
+      <Button
+        className="justify-center gap-4"
+        onClick={() => window.open("https://goo.gl/maps/hGa9q3bhYh2aXsaf8", "_blank")}>
+        <a>Save this list</a>
+        <img src={Heart.src} />
+      </Button>
     </>
   );
 };
@@ -116,7 +123,8 @@ const ItemDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
           <Tag text={tag} />
         ))}
       </div>
-      <MiniMap tip={tip} />
+      <div className="hidden sm:block cursor-pointer font-bold"><a href={tip.mapsUrl} target="_blank">Navigation &rarr;</a></div>
+      <a className="cursor-pointer" href={tip.mapsUrl} target="_blank"><MiniMap tip={tip} /></a>
     </div>
   );
 };

@@ -51,20 +51,20 @@ export function MiniMap({ tip }: MiniMapProps) {
   };
 
   const Marker: React.FC<MarkerProps> = ({ tip }) => {
-    const iconMap = {
-      Nightlife: "icons/bar.svg",
-      Restaurant: "icons/restaurant.svg",
-      POI: "icons/camera.svg",
-      Landmark: "icons/bar.png",
-      Coffee: "icons/camera.svg",
-      Snacks: "icons/camera.svg",
-      Market: "icons/camera.svg"
+    const markerMap = {
+      Nightlife: "icons/nightlifeMarker.svg",
+      Restaurant: "icons/restaurantMarker.svg",
+      Sightseeing: "icons/sightseeingMarker.svg",
+      Landmark: "icons/landmarkMarker.png",
+      Coffee: "icons/coffeeMarker.svg",
+      Snacks: "icons/snacksMarker.svg",
+      Market: "icons/marketMarker.svg"
     };
     const scaledSize = new google.maps.Size(48, 48);
     return (
       <_Marker
         position={tip.geometry}
-        icon={{ url: iconMap[tip.kind], scaledSize }}
+        icon={{ url: markerMap[tip.kind], scaledSize }}
       />
     );
   };
