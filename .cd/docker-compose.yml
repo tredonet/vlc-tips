@@ -1,0 +1,42 @@
+version: "2"
+services:
+  vlctips:
+    build: ../
+    container_name: vlc-tips
+    environment:
+      MONGO_CONNECTION_STRING: CHANGE_ME
+      NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: CHANGE_ME
+    networks:
+      - proxy
+    depends_on:
+      - mongo
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.vlctips.entrypoints=http"
+      - "traefik.http.routers.vlctips.rule=Host(`vlctips.toninoredo.net`)"
+      - "traefik.http.middlewares.vlctips-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.vlctips.middlewares=vlctips-https-redirect"
+      - "traefik.http.routers.vlctips-secure.entrypoints=https"
+      - "traefik.http.routers.vlctips-secure.rule=Host(`vlctips.toninoredo.net`)"
+      - "traefik.http.routers.vlctips-secure.tls=true"
+      - "traefik.http.routers.vlctips-secure.service=vlctips"
+      - "traefik.http.services.vlctips.loadbalancer.server.port=3000"
+      - "traefik.docker.network=proxy"
+  mongo_vlctips:
+      image: mongo:4.0
+      container_name: vlctips_db
+      ports:
+          - 27017:27018
+      environment:
+          MONGO_INITDB_ROOT_USERNAME: CHANGE_ME
+          MONGO_INITDB_ROOT_PASSWORD: CHANGE_ME
+          MONGO_INITDB_DATABASE: vlctips
+      networks:
+        - proxy
+      volumes:
+          - ../data/db:/data/db
+
+networks:
+  proxy:
+    external: true
