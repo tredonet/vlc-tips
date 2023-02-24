@@ -9,7 +9,7 @@ services:
     networks:
       - proxy
     depends_on:
-      - mongo
+      - mongovlctips
     restart: always
     labels:
       - "traefik.enable=true"
@@ -23,11 +23,12 @@ services:
       - "traefik.http.routers.vlctips-secure.service=vlctips"
       - "traefik.http.services.vlctips.loadbalancer.server.port=3000"
       - "traefik.docker.network=proxy"
-  mongo_vlctips:
+  mongovlctips:
       image: mongo:4.0
       container_name: vlctips_db
+      restart: always
       ports:
-          - 27017:27018
+          - 27018:27017
       environment:
           MONGO_INITDB_ROOT_USERNAME: CHANGE_ME
           MONGO_INITDB_ROOT_PASSWORD: CHANGE_ME

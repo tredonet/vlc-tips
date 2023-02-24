@@ -2,10 +2,9 @@ import type { NextPage } from "next";
 import { Map, Tips } from "features";
 import { Heading } from "components";
 import { useLoadScript } from "@react-google-maps/api";
-import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
-  if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) return <></>;
+  if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) return <>No API key</>;
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });

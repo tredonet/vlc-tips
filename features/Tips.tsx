@@ -110,14 +110,14 @@ const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick })
 
 const ItemDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
   return (
-    <div className="py-2 text-sm">
+    <div className="py-2 text-base">
       {tip.type &&
         Object.entries(tip.type).map(([key, val]: any) => (
           <div>
             {capitalize(key)}: {val}
           </div>
         ))}
-      <div className="text-xs my-2">{tip.description}</div>
+      <div className=" my-2">{tip.description}</div>
       <div className="flex flex-wrap my-1">
         {tip.tags.map((tag) => (
           <Tag text={tag} />
