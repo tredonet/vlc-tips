@@ -1,13 +1,13 @@
 import "reflect-metadata";
 import connectDB from "middlewares/db";
 import Tip from "models/Tip";
-import { Body, createHandler, Get, Post } from "next-api-decorators";
+import { Body, createHandler, Get, Post, Query } from "next-api-decorators";
 
 class TipController {
   @Get()
-  async listTips() {
+  async listTips(@Query("listId") listId = "Tonino") {
     await connectDB();
-    return await Tip.find();
+    return await Tip.find({ listId });
   }
 
   // @Post()
