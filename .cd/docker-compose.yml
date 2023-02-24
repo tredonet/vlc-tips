@@ -3,9 +3,6 @@ services:
   vlctips:
     build: ../
     container_name: vlc-tips
-    environment:
-      MONGO_CONNECTION_STRING: CHANGE_ME
-      NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: CHANGE_ME
     networks:
       - proxy
     depends_on:
