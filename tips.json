@@ -1,7 +1,7 @@
 [{
   "name": "Mercat Central",
-  "kind": "POI",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "kind": "Sightseeing",
+  "description": "Modernista market building with colorful tiles & a diverse collection of stalls, separated by type.",
   "geometry": {
     "lat": 39.47346898350782,
     "lng": -0.3790776147723494
@@ -10,7 +10,7 @@
   "listId": "Tonino"
 },{
   "name": "El Carme",
-  "kind": "POI",
+  "kind": "Sightseeing",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "geometry": {
     "lat": 39.4791549,
@@ -20,7 +20,7 @@
   "listId": "Tonino"
 },{
   "name": "Ciudad de las Artes y Ciencas",
-  "kind": "POI",
+  "kind": "Sightseeing",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "geometry": {
     "lat": 39.4564821763615,
@@ -30,7 +30,7 @@
   "listId": "Tonino"
 },{
   "name": "Turia",
-  "kind": "POI",
+  "kind": "Sightseeing",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "geometry": {
     "lat": 39.478144401259414,
@@ -40,7 +40,7 @@
   "listId": "Tonino"
 },{
   "name": "Bike Guy VLC",
-  "kind": "POI",
+  "kind": "Sightseeing",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "geometry": {
     "lat": 39.479107329592175,
@@ -50,7 +50,7 @@
   "listId": "Tonino"
 },{
   "name": "Oceanogràfic",
-  "kind": "POI",
+  "kind": "Sightseeing",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "geometry": {
     "lat": 39.45299929911122,
@@ -60,7 +60,7 @@
   "listId": "Tonino"
 },{
   "name": "BioParc",
-  "kind": "POI",
+  "kind": "Sightseeing",
   "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   "geometry": {
     "lat": 39.478122509501134,
@@ -87,7 +87,7 @@
   "type": {
     "cuisine": "Burgers"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "One of the best Burger places in Valencia. Multiple restaurants around the city. More towards the pricy side of Burgers. ",
   "geometry": {
     "lat": 39.47108613180027,
     "lng": -0.37797531490941033
@@ -95,12 +95,26 @@
   "mapsUrl": "https://goo.gl/maps/iUCJuXkPrM3JSVRQ6",
   "listId": "Tonino"
 },{
+  "name": "La Pepica",
+  "kind": "Restaurant",
+  "type": {
+    "cuisine": "Spanish"
+  },
+  "description": "Long-running restaurant known for seafood & vegetable paellas, plus a terrace with sea views.",
+  "geometry": {
+    "lat": 39.4635687564872,
+    "lng": -0.323741419114807
+  },
+  "mapsUrl": "https://goo.gl/maps/sVkHPxonSfBUe2EU9",
+  "listId": "Tonino",
+  "tags": ["Paella"]
+},{
   "name": "Amor Amargo",
   "kind": "Restaurant",
   "type": {
     "cuisine": "Spanish Food/Tapas"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Nice tapas bar with outdoor and indoor seating. Great interior design.",
   "geometry": {
     "lat": 39.46240180315856,
     "lng": -0.372265806319342
@@ -113,7 +127,7 @@
   "type": {
     "cuisine": "Spanish Food/Tapas"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Busy, casual tapas bar with outdoor seating serving market-fresh seafood, paella & classic desserts.",
   "geometry": {
     "lat": 39.474242518604704,
     "lng": -0.3782892516978014
@@ -126,7 +140,7 @@
   "type": {
     "cuisine": "Spanish Food/Tapas"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Traditional tapas, wines & beers are served in this intimate, down-to-earth restaurant.",
   "geometry": {
     "lat": 39.47510958956594,
     "lng": -0.37757043490916997
@@ -139,7 +153,7 @@
   "type": {
     "cuisine": "Tapas"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Casual, bustling eatery offering an array of classic tapas & snacks, plus cocktails & draft brews.",
   "geometry": {
     "lat": 39.461979389139216,
     "lng": -0.3729228082654095
@@ -208,7 +222,7 @@
     "Vegetarian",
     "vegan"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Locally sourced, vegetarian & vegan specialties served in a country-chic destination.",
   "geometry": {
     "lat": 39.46090749327891,
     "lng": -0.37362009795752615
@@ -238,7 +252,7 @@
     "Top Recommendation",
     "$$$"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Funky eatery whipping up Japanese staples such as donburi, tempura & sushi, plus wine & sake.",
   "geometry": {
     "lat": 39.46340456482018,
     "lng": -0.37238823245082453
@@ -344,7 +358,7 @@
 },{
   "name": "Mercabanyal",
   "kind": "Restaurant",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Chill venue with a variety of vendors serving local & global eats such as sushi, crepes & burgers.",
   "geometry": {
     "lat": 39.472257425328905,
     "lng": -0.32566337823306213
@@ -354,7 +368,7 @@
 },{
   "name": "Boa Beach",
   "kind": "Restaurant",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Tropical themed bar at the seaside with great cocktails.",
   "geometry": {
     "lat": 39.46546643096059,
     "lng": -0.32322310844339164
@@ -394,7 +408,7 @@
   "tags": [
     "Live Music"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Modern culture vanue with industrial-chic decor, hosting live music & other events.",
   "geometry": {
     "lat": 39.469838121491975,
     "lng": -0.3249373661957395
@@ -408,7 +422,7 @@
     "Agua de Valencia",
     "Bar"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Perfect place to try \"Agua de Valencia\". Unique interior design - usually very busy in the evenings. ",
   "geometry": {
     "lat": 39.47733201735852,
     "lng": -0.3755589191172937
@@ -423,7 +437,7 @@
     "Live Music",
     "Reggae"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Well-known, vintage venue for cocktails, plus performances from flamenco dancing to jazz music.",
   "geometry": {
     "lat": 39.4748297466524,
     "lng": -0.38127853784750426

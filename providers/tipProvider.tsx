@@ -1,7 +1,7 @@
 import React, { ComponentProps, createContext, Dispatch, useEffect, useState } from "react";
 import { Tip, TipKind } from "types";
 
-export type DataContextProps = {
+export type TipContextProps = {
   tips?: Tip[];
   listId: string;
   setListId: (listId: string) => void;
@@ -12,9 +12,9 @@ export type DataContextProps = {
   setSelectedCategory: Dispatch<TipKind>;
 };
 
-const DataContext = createContext<DataContextProps>({} as DataContextProps);
-export default DataContext;
-export const DataProvider: React.FC<ComponentProps<"div">> = ({ children }) => {
+export const TipContext = createContext<TipContextProps>({} as TipContextProps);
+
+export const TipProvider: React.FC<ComponentProps<"div">> = ({ children }) => {
   const [tips, setTips] = useState<Tip[]>([]);
   const [selectedTip, setSelectedTip] = useState<Tip>();
   const [listId, setListId] = useState("Tonino");
@@ -41,5 +41,5 @@ export const DataProvider: React.FC<ComponentProps<"div">> = ({ children }) => {
     setSelectedCategory,
   };
 
-  return <DataContext.Provider value={values}>{children}</DataContext.Provider>;
+  return <TipContext.Provider value={values}>{children}</TipContext.Provider>;
 };

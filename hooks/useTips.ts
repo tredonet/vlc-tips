@@ -1,4 +1,4 @@
-import DataContext from "providers/provider";
+import { TipContext } from "providers";
 import { useContext } from "react";
 
-export const useTips = () => useContext(DataContext);
+export const useTips = () => useContext(TipContext);

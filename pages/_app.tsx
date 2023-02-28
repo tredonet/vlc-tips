@@ -1,12 +1,14 @@
 import "../styles/globals.css";
-import { DataProvider } from "providers/provider";
+import { TipProvider, AuthProvider } from "providers";
 import type { AppProps } from "next/app";
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <DataProvider>
-      <Component {...pageProps} />
-    </DataProvider>
+    <TipProvider>
+      <AuthProvider>
+        <Component {...pageProps} />
+      </AuthProvider>
+    </TipProvider>
   );
 }
 
