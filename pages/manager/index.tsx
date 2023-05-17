@@ -1,5 +1,4 @@
 import { Card, Tag } from "components";
-import { EditTip } from "features";
 import { useTips } from "hooks";
 import { useAuth } from "hooks/useAuth";
 import type { NextPage } from "next";
