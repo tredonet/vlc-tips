@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Login: NextPage = () => {
   const router = useRouter();
-  const { token, setToken } = useAuth();
+  const {  setToken, setUsername } = useAuth();
   const [error, setError] = useState(false);
   const onSubmit = (e: any) => {
     e.preventDefault();
@@ -23,8 +23,9 @@ const Login: NextPage = () => {
       .then((res) => res.json())
       .then((res) => {
         if ("statusCode" in res && res.statusCode != 200) setError(true);
-        if ("bearer_token" in res) {
+        if ("bearer_token" in res && "username" in res) {
           setToken(res.bearer_token);
+          setUsername(res.username);
           router.push("/manager");
         }
       })

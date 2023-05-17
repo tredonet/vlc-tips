@@ -13,11 +13,13 @@ class AuthController {
     const { username, password } = body;
     if (!username || !password) throw new BadRequestException("fields_missing");
     const user = await User.findOne({ username });
+    const data = { username: user.username, admin: user.admin };
     if (!user) throw new UnauthorizedException();
     if (!compareSync(password, user.password)) throw new UnauthorizedException();
-    const bearer_token = jwt.sign({ exp: Math.floor(Date.now() / 1000) + 60 * 60, data: user.username }, JWT_SECRET);
-    return { bearer_token };
+    const bearer_token = jwt.sign({ exp: Math.floor(Date.now() / 1000) + 60 * 60, data }, JWT_SECRET);
+    return { bearer_token, username };
   }
+
 }
 
 export default createHandler(AuthController);

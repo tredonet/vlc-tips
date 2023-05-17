@@ -63,12 +63,6 @@ export const Tips: React.FC = () => {
           tips={tips?.filter((tip) => tip.tags.includes(filter))}
         />
       )}
-      <Button
-        className="justify-center gap-4"
-        onClick={() => window.open("https://goo.gl/maps/hGa9q3bhYh2aXsaf8", "_blank")}>
-        <a>Save this list</a>
-        <img src={Heart.src} />
-      </Button>
     </>
   );
 };

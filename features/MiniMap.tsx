@@ -10,33 +10,14 @@ export function MiniMap({ tip }: MiniMapProps) {
   const [setMarker, setSetMarker] = useState(false);
   const center = useMemo(() => tip.geometry, []);
   const zoom = useMemo(() => 13, []);
-  const styles = useMemo(
-    () => [
-      {
-        featureType: "poi",
-        elementType: "labels.icon",
-        stylers: [{ visibility: "off" }],
-      },
-      {
-        featureType: "transit",
-        elementType: "labels.icon",
-        stylers: [{ visibility: "off" }],
-      },
-      {
-        featureType: "road",
-        elementType: "labels.icon",
-        stylers: [{ visibility: "off" }],
-      },
-    ],
-    []
-  );
+ 
 
   const options = useMemo(
     () => ({
       disableDefaultUI: true,
       clickableIcons: false,
       gestureHandling: 'none',
-      styles,
+      mapId: "a9f7b214210ee54c"
     }),
     []
   );

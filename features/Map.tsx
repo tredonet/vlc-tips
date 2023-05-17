@@ -1,4 +1,4 @@
-import { useLoadScript, Marker as _Marker, GoogleMap, InfoWindow as _InfoWindow } from "@react-google-maps/api";
+import { Marker as _Marker, GoogleMap, InfoWindow as _InfoWindow } from "@react-google-maps/api";
 import { useTips } from "hooks";
 import { useMemo } from "react";
 import { Tip } from "types";
@@ -9,32 +9,13 @@ export function Map() {
   const { tips, selectedTip, setSelectedTip, setSelectedCategory } = useTips();
   const center = useMemo(() => selectedTip?.geometry || { lat: 39.468, lng: -0.359 }, [selectedTip]);
   const zoom = useMemo(() => (selectedTip ? 16 : 14.9), [selectedTip]);
-  const styles = useMemo(
-    () => [
-      {
-        featureType: "poi",
-        elementType: "labels.icon",
-        stylers: [{ visibility: "off" }],
-      },
-      {
-        featureType: "transit",
-        elementType: "labels.icon",
-        stylers: [{ visibility: "off" }],
-      },
-      {
-        featureType: "road",
-        elementType: "labels.icon",
-        stylers: [{ visibility: "off" }],
-      },
-    ],
-    []
-  );
+  
 
   const options = useMemo(
     () => ({
       disableDefaultUI: true,
       clickableIcons: false,
-      styles,
+      mapId: "a9f7b214210ee54c"
     }),
     []
   );
@@ -70,7 +51,7 @@ export function Map() {
   };
   return (
     <GoogleMap zoom={zoom} center={center} options={options} mapContainerClassName="w-full h-screen hidden sm:block">
-      {tips && tips.map((tip: Tip) => <Marker tip={tip} />)}
+      {tips && tips.map((tip: Tip) => <Marker tip={tip} key={tip.name} />)}
     </GoogleMap>
   );
 }
