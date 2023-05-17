@@ -3,8 +3,20 @@ import { Map, Tips } from "features";
 import { Heading } from "components";
 import { useLoadScript } from "@react-google-maps/api";
 import { WelcomeDialog } from "features";
+import { useRouter } from "next/router";
+import { useTips } from "hooks";
+import { useEffect } from "react";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const { listId } = router.query;
+  const { setListId, reloadTips } = useTips();
+  useEffect(() => {
+    if (!listId) return;
+    setListId(listId.toString());
+    reloadTips();
+    router.push("/");
+  });
   if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) return <>No API key</>;
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
