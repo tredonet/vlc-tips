@@ -1,9 +1,8 @@
 import { Marker as _Marker, GoogleMap, InfoWindow as _InfoWindow } from "@react-google-maps/api";
+import { marker } from "assets";
 import { useTips } from "hooks";
 import { useMemo } from "react";
 import { Tip } from "types";
-
-
 
 export function Map() {
   const { tips, selectedTip, setSelectedTip, setSelectedCategory } = useTips();
@@ -30,20 +29,12 @@ export function Map() {
   };
 
   const Marker: React.FC<MarkerProps> = ({ tip }) => {
-    const markerMap = {
-      Nightlife: "icons/nightlifeMarker.svg",
-      Restaurant: "icons/restaurantMarker.svg",
-      Sightseeing: "icons/sightseeingMarker.svg",
-      Landmark: "icons/landmarkMarker.png",
-      Coffee: "icons/coffeeMarker.svg",
-      Snacks: "icons/snacksMarker.svg",
-      Market: "icons/marketMarker.svg"
-    };
+
     const scaledSize = new google.maps.Size(48, 48);
     return (
       <_Marker
         position={tip.geometry}
-        icon={{ url: markerMap[tip.kind], scaledSize }}
+        icon={{ url: marker[tip.kind], scaledSize }}
         onClick={() => onClickMarker(tip)}
         animation={tip.name === selectedTip?.name ? google.maps.Animation.BOUNCE : undefined}
       />

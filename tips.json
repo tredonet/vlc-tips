@@ -11,7 +11,7 @@
 },{
   "name": "El Carme",
   "kind": "Sightseeing",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "A charming neighborhood filled with narrow streets, bohemian vibes, and historic buildings.",
   "geometry": {
     "lat": 39.4791549,
     "lng": -0.3817505
@@ -21,7 +21,7 @@
 },{
   "name": "Ciudad de las Artes y Ciencas",
   "kind": "Sightseeing",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Valencia's iconic cultural and architectural complex located at one end of the Turia. It features a collection of futuristic buildings, including an opera house, an IMAX cinema, a science museum, and an open air nightclub.",
   "geometry": {
     "lat": 39.4564821763615,
     "lng": -0.3531618926327128
@@ -31,7 +31,7 @@
 },{
   "name": "Turia",
   "kind": "Sightseeing",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Public park located in the heart of the city. The park was built in the 1980s on the former riverbed of the Turia River, which was diverted after a devastating flood. The park stretches over 9 kilometers and features walking and cycling paths, sports facilities, playgrounds, gardens, and cultural attractions, making it a popular destination for locals and visitors alike.",
   "geometry": {
     "lat": 39.478144401259414,
     "lng": -0.3706879468701015
@@ -41,7 +41,7 @@
 },{
   "name": "Bike Guy VLC",
   "kind": "Sightseeing",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Your best option for a guided bike tour around the city. Luke will tell you the most intesting stories and will definitely \"make you fall in love with the city\".",
   "geometry": {
     "lat": 39.479107329592175,
     "lng": -0.3769137154514255
@@ -51,7 +51,7 @@
 },{
   "name": "Oceanogràfic",
   "kind": "Sightseeing",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Europe's largest aquarium, located within the City of Arts and Sciences, where you can embark on a captivating underwater journey, encountering a diverse range of marine life.",
   "geometry": {
     "lat": 39.45299929911122,
     "lng": -0.34701101256084327
@@ -61,7 +61,7 @@
 },{
   "name": "BioParc",
   "kind": "Sightseeing",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "A remarkable safari style zoo that aims to recreate the natural habitats of its animals.",
   "geometry": {
     "lat": 39.478122509501134,
     "lng": -0.4075960241763879
@@ -69,25 +69,12 @@
   "mapsUrl": "https://goo.gl/maps/DS6RJ17kWHQC5Yfm9",
   "listId": "Tonino"
 },{
-  "name": "Black Turtle",
-  "kind": "Restaurant",
-  "type": {
-    "cuisine": "Burgers"
-  },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "geometry": {
-    "lat": 39.46952804372402,
-    "lng": -0.3695534724098339
-  },
-  "mapsUrl": "https://goo.gl/maps/RZ6WipcKmxcieeDm8",
-  "listId": "Tonino"
-},{
   "name": "Hundred Burgers",
   "kind": "Restaurant",
   "type": {
     "cuisine": "Burgers"
   },
-  "description": "One of the best Burger places in Valencia. Multiple restaurants around the city. More towards the pricy side of Burgers. ",
+  "description": "One of the best Burger places in Valencia. Multiple restaurants around the city. More towards the pricy side of Burgers. Each burer has a Beyond-meat option as well. Bear in mind: the greasy burgers are really greasy.",
   "geometry": {
     "lat": 39.47108613180027,
     "lng": -0.37797531490941033
@@ -100,7 +87,7 @@
   "type": {
     "cuisine": "Spanish"
   },
-  "description": "Long-running restaurant known for seafood & vegetable paellas, plus a terrace with sea views.",
+  "description": "World famous restaurant located at the beach. It is a historic establishment, founded in 1898, with a rich culinary tradition, specializing in traditional Valencian cuisine, particularly its most famous dish, paella.",
   "geometry": {
     "lat": 39.4635687564872,
     "lng": -0.323741419114807
@@ -114,7 +101,7 @@
   "type": {
     "cuisine": "Spanish Food/Tapas"
   },
-  "description": "Nice tapas bar with outdoor and indoor seating. Great interior design.",
+  "description": "Good restaurant with traditional Spanish dishes. Great interior design. The boquerones are a must.",
   "geometry": {
     "lat": 39.46240180315856,
     "lng": -0.372265806319342
@@ -127,7 +114,7 @@
   "type": {
     "cuisine": "Spanish Food/Tapas"
   },
-  "description": "Busy, casual tapas bar with outdoor seating serving market-fresh seafood, paella & classic desserts.",
+  "description": "Busy, casual tapas bar with outdoor seating serving all the iconic Spanish tapas. Be sure to always state the size of the tapa you're ordering.",
   "geometry": {
     "lat": 39.474242518604704,
     "lng": -0.3782892516978014
@@ -140,7 +127,7 @@
   "type": {
     "cuisine": "Spanish Food/Tapas"
   },
-  "description": "Traditional tapas, wines & beers are served in this intimate, down-to-earth restaurant.",
+  "description": "Tapas, wines & beers are served in this intimate setting where you sit right at the bar. This old establishment, founded in 1946, is especially known for its sardines.",
   "geometry": {
     "lat": 39.47510958956594,
     "lng": -0.37757043490916997
@@ -153,7 +140,7 @@
   "type": {
     "cuisine": "Tapas"
   },
-  "description": "Casual, bustling eatery offering an array of classic tapas & snacks, plus cocktails & draft brews.",
+  "description": "Small cozy restaurant with a not so traditional tapas selection. The food is great and the service is even better.",
   "geometry": {
     "lat": 39.461979389139216,
     "lng": -0.3729228082654095
@@ -164,9 +151,9 @@
   "name": "Casa Carmela",
   "kind": "Restaurant",
   "type": {
-    "cuisine": "Paëlla"
+    "cuisine": "Paella"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Beautiful, cozy paella restaurant. More on the chique side. Their kitchen let's you take a look on how they cook their paella traditionally on woodfire. Make sure to reserve a table.",
   "geometry": {
     "lat": 39.48233808871991,
     "lng": -0.32579038089786955
@@ -179,7 +166,7 @@
   "type": {
     "cuisine": "Tapas"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Not too traditional restaurant with delicious italian inspired tapas. Decently priced.",
   "geometry": {
     "lat": 39.474856390982985,
     "lng": -0.3463205504208082
@@ -187,25 +174,12 @@
   "mapsUrl": "https://g.page/bocadella",
   "listId": "Tonino"
 },{
-  "name": "Saona",
-  "kind": "Restaurant",
-  "type": {
-    "cuisine": "Interesting Food"
-  },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "geometry": {
-    "lat": 39.467765448593084,
-    "lng": -0.36865644631382555
-  },
-  "mapsUrl": "https://goo.gl/maps/6ybfNS5EVEjGSp7k8",
-  "listId": "Tonino"
-},{
   "name": "Tagomago",
   "kind": "Restaurant",
   "type": {
     "cuisine": "Interesting Food"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Stylish restaurant located at a beautiful square. Definitely recommended to eat outside if the temperature allows. The restaurant serves a fusion cuisine with dishes inspired by the Asian and Spanish cuisine. On week days you'll get a three course meal for about €15.",
   "geometry": {
     "lat": 39.472123370331126,
     "lng": -0.3737684669826115
@@ -222,7 +196,7 @@
     "Vegetarian",
     "vegan"
   ],
-  "description": "Locally sourced, vegetarian & vegan specialties served in a country-chic destination.",
+  "description": "Nice restaurant with a calm atmosphere. Specialized in vegetarian and vegan dishes.",
   "geometry": {
     "lat": 39.46090749327891,
     "lng": -0.37362009795752615
@@ -230,17 +204,17 @@
   "mapsUrl": "https://g.page/restaurantecopenhagen",
   "listId": "Tonino"
 },{
-  "name": "Voltereta",
+  "name": "Voltereta, Bienvenido a MAnhattan",
   "kind": "Restaurant",
   "type": {
     "cuisine": "Interesting Food"
   },
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Unique dining experience that takes you back to the roaring 20s of Manhattan. The entrance to the restaurant is a journey of itself. They have 2 differently themed restaurants as well.",
   "geometry": {
-    "lat": 39.46792509994666,
-    "lng": -0.36753322450285447
+    "lat": 39.46928255497607,
+    "lng": -0.37059088035801174
   },
-  "mapsUrl": "https://g.page/volteretavalencia",
+  "mapsUrl": "https://goo.gl/maps/TjcRhNduWueCP2qBA",
   "listId": "Tonino"
 },{
   "name": "Kawori",
@@ -252,7 +226,7 @@
     "Top Recommendation",
     "$$$"
   ],
-  "description": "Funky eatery whipping up Japanese staples such as donburi, tempura & sushi, plus wine & sake.",
+  "description": "\"Unusual Japanese Food\" is their slogan. Every dish is indeed unusual, but delicious. It is highly recommended to ask the staff to compose the courses for you, as it is very common in this restaurant. You will spend between €50 and €60 per person, but it is worth every cent.",
   "geometry": {
     "lat": 39.46340456482018,
     "lng": -0.37238823245082453
@@ -268,7 +242,7 @@
   "tags": [
     "Mexican"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Mexican restaurant that serves good comfort food.",
   "geometry": {
     "lat": 39.46237592328059,
     "lng": -0.3728143258224873
@@ -284,7 +258,7 @@
   "tags": [
     "Mexican"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "The most authentic Mexican food can be found here. ",
   "geometry": {
     "lat": 39.460814460581325,
     "lng": -0.3746999536998361
@@ -300,7 +274,7 @@
   "tags": [
     "Mexican"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "ood, cheap taco's downtown Valencia. Ideal if you crave delicious food, but don't want a full-sized meal.",
   "geometry": {
     "lat": 39.474719990704294,
     "lng": -0.37640916378678907
@@ -316,7 +290,7 @@
   "tags": [
     "Sushi"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Sushi restaurant where they serve a buffet, a la carte, or right from the revolving sushi bar.",
   "geometry": {
     "lat": 39.46070924379845,
     "lng": -0.35190842758027696
@@ -332,7 +306,7 @@
   "tags": [
     "Indian"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Highly rated Indian restaurant with a very friendly staff.",
   "geometry": {
     "lat": 39.45810086655659,
     "lng": -0.3468907937643061
@@ -348,7 +322,7 @@
   "tags": [
     "Greek"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Decently priced Greek food.",
   "geometry": {
     "lat": 39.45862407835369,
     "lng": -0.34916966079311745
@@ -358,7 +332,7 @@
 },{
   "name": "Mercabanyal",
   "kind": "Restaurant",
-  "description": "Chill venue with a variety of vendors serving local & global eats such as sushi, crepes & burgers.",
+  "description": "Cool foodcourt-like venue near the beach with around 8 different foodstalls. Very nice to go after the beach.",
   "geometry": {
     "lat": 39.472257425328905,
     "lng": -0.32566337823306213
@@ -381,7 +355,7 @@
   "tags": [
     "Open Air Club"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Very popular beach club as the name implies. Turns into an open air club at night with a stage that reminds of your typical EDM festival.",
   "geometry": {
     "lat": 39.46314391947226,
     "lng": -0.3215948370547072
@@ -395,7 +369,7 @@
     "Cocktail Bar",
     "Viewpoint"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Cocktailbar that you should go to for the views. Their big rooftop terrace has perfect views over the city of arts and sciences. Recommended to go when it's dark. The entrance is through the hotel's lobby. ",
   "geometry": {
     "lat": 39.46096409153215,
     "lng": -0.3528155396941902
@@ -408,7 +382,7 @@
   "tags": [
     "Live Music"
   ],
-  "description": "Modern culture vanue with industrial-chic decor, hosting live music & other events.",
+  "description": "Modern culture venue with industrial-chic decor, hosting live music & other events. Just as good to go during the day as at night.",
   "geometry": {
     "lat": 39.469838121491975,
     "lng": -0.3249373661957395
@@ -422,7 +396,7 @@
     "Agua de Valencia",
     "Bar"
   ],
-  "description": "Perfect place to try \"Agua de Valencia\". Unique interior design - usually very busy in the evenings. ",
+  "description": "Perfect place to try \"Agua de Valencia\". Unique interior design - usually very busy in the evenings.",
   "geometry": {
     "lat": 39.47733201735852,
     "lng": -0.3755589191172937
@@ -437,7 +411,7 @@
     "Live Music",
     "Reggae"
   ],
-  "description": "Well-known, vintage venue for cocktails, plus performances from flamenco dancing to jazz music.",
+  "description": "Well-known down to earth venue for live music and a night out. There's live reggae music on Wednesdays and Saturdays until 12. After 12 the DJ plays a mix of prettu much everything. Type of place where it doesn't matter what you look like or what you wear.",
   "geometry": {
     "lat": 39.4748297466524,
     "lng": -0.38127853784750426
@@ -450,25 +424,12 @@
   "tags": [
     "Nightclub"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "One of the biggest nightclubs on a very prominent location. This venue has the complete clubbing experience. Tends to attract a lot of students on other days than Friday and Saturday. Will play house and urban music. There is an entrance cover of €25, but if you buy your ticket in advance online it will €20. On some days you can get free tickets through the Valencia Language Exchange.",
   "geometry": {
     "lat": 39.45534976334197,
     "lng": -0.35362358504467756
   },
   "mapsUrl": "https://goo.gl/maps/dFDs8MTtiaDbX33H7",
-  "listId": "Tonino"
-},{
-  "name": "Rumbo 144",
-  "kind": "Nightlife",
-  "tags": [
-    "Nightclub"
-  ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "geometry": {
-    "lat": 39.47261239591321,
-    "lng": -0.34450919266463326
-  },
-  "mapsUrl": "https://goo.gl/maps/oZpozLtmCHdRTW4m7",
   "listId": "Tonino"
 },{
   "name": "Oven Club",
@@ -477,57 +438,11 @@
     "Nightclub",
     "Deep House"
   ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  "description": "Nightclub that focusses on deep house music. Upstairs is a small area, but you'll find the dark, laser filled larger area downstairs.",
   "geometry": {
     "lat": 39.463923049535644,
     "lng": -0.3759724359986186
   },
   "mapsUrl": "https://g.page/ovenclubvalencia",
-  "listId": "Tonino"
-},{
-  "name": "Comitee",
-  "kind": "Nightlife",
-  "tags": [
-    "Nightclub"
-  ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "geometry": {
-    "lat": 39.45897064644518,
-    "lng": -0.3834392239476775
-  },
-  "mapsUrl": "https://g.page/committeevalencia",
-  "listId": "Tonino"
-},{
-  "name": "Carribean",
-  "kind": "Nightlife",
-  "tags": [
-    "Nightclub"
-  ],
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "geometry": {
-    "lat": 39.473952094740476,
-    "lng": -0.3558924814392566
-  },
-  "mapsUrl": "https://g.page/Caribbeansaragon-valencia",
-  "listId": "Tonino"
-},{
-  "name": "Montenejos",
-  "kind": "Landmark",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "geometry": {
-    "lat": 40.0684672,
-    "lng": -0.52601
-  },
-  "mapsUrl": "https://goo.gl/maps/6gHbz7ixm37hNTk79",
-  "listId": "Tonino"
-},{
-  "name": "Calpe",
-  "kind": "Landmark",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  "geometry": {
-    "lat": 38.6515708,
-    "lng": 0.0133355
-  },
-  "mapsUrl": "https://goo.gl/maps/uV7GzVnzUpevh1Zp7",
   "listId": "Tonino"
 }]

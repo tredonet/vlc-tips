@@ -2,37 +2,19 @@ import { useTips } from "hooks";
 import { capitalize, uniqueValues } from "utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
-import { Tip, TipKind } from "types";
-import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag, Button } from "components";
-import { MiniMap } from "./MiniMap";
-import Nightlife from "../public/icons/nightlife.svg";
-import Restaurant from "../public/icons/restaurant.svg";
-import Sightseeing from "../public/icons/sightseeing.svg";
-import Landmark from "../public/icons/landmark.svg";
-import Coffee from "../public/icons/coffee.svg";
-import Market from "../public/icons/market.svg";
-import Snacks from "../public/icons/snacks.svg";
+import { Tip } from "types";
 import Eye from "../public/icons/eye.svg";
-import Heart from "../public/icons/heart.svg";
+import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag } from "components";
+import { MiniMap } from "./MiniMap";
 import { useState } from "react";
+import { icon } from "assets";
 
 export const Tips: React.FC = () => {
   const [filter, setFilter] = useState<string | undefined>();
   const { tips, selectedCategory, setSelectedCategory } = useTips();
   const tags = ["Spanish", "Drinks", "Outdoors", "Coffee", "Paella", "Live Music"];
   const categories = uniqueValues(tips?.map((tip) => tip.kind) || []);
-  const icon = (kind: TipKind) => {
-    const icons = {
-      Nightlife,
-      Restaurant,
-      Sightseeing,
-      Landmark,
-      Coffee,
-      Snacks,
-      Market,
-    };
-    return icons[kind];
-  };
+
   return (
     <>
       <div className="flex flex-wrap my-5 mx-3">
