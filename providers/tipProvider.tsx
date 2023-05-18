@@ -3,9 +3,7 @@ import { Tip, TipKind } from "types";
 
 export type TipContextProps = {
   tips?: Tip[];
-  listId: string;
-  setListId: (listId: string) => void;
-  reloadTips: () => void;
+  loadTips: (listId: string) => void;
   selectedTip?: Tip;
   setSelectedTip: Dispatch<Tip | undefined>;
   selectedCategory: TipKind;
@@ -17,26 +15,20 @@ export const TipContext = createContext<TipContextProps>({} as TipContextProps);
 export const TipProvider: React.FC<ComponentProps<"div">> = ({ children }) => {
   const [tips, setTips] = useState<Tip[]>([]);
   const [selectedTip, setSelectedTip] = useState<Tip>();
-  const [listId, setListId] = useState("Tonino");
   const [selectedCategory, setSelectedCategory] = useState<TipKind>("Restaurant");
 
-  useEffect(() => fetchTips(), []);
-
-  const fetchTips = () => {
+  const loadTips = (listId: string) => {
     fetch(`/api/tip?listId=${listId}`)
       .then((res) => res.json())
-      .then((res) => setTips(res.filter((tip: Tip) => tip.kind !== "Landmark")))
+      .then(setTips)
       .catch((e) => console.log(e.message));
   };
 
   const values = {
     tips,
-    listId,
-    setListId,
-    reloadTips: (): void => fetchTips(),
+    loadTips,
     selectedTip,
-    setSelectedTip: (tip: Tip | undefined): void =>
-      setSelectedTip(tip === selectedTip ? undefined : tip),
+    setSelectedTip: (tip: Tip | undefined): void => setSelectedTip(tip === selectedTip ? undefined : tip),
     selectedCategory,
     setSelectedCategory,
   };

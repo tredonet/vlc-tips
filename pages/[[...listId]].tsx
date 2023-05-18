@@ -10,13 +10,10 @@ import { useEffect } from "react";
 const Home: NextPage = () => {
   const router = useRouter();
   const { listId } = router.query;
-  const { setListId, reloadTips } = useTips();
+  const { loadTips } = useTips();
   useEffect(() => {
-    if (!listId) return;
-    setListId(listId.toString());
-    reloadTips();
-    router.push("/");
-  });
+    loadTips(listId?.toString() || "Tonino");
+  }, [listId]);
   if (!process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY) return <>No API key</>;
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,

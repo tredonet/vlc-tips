@@ -9,15 +9,14 @@ import { capitalize } from "utils";
 const Manager: NextPage = () => {
   const [isOpen, setIsOpen] = useState(true);
   const { token, username } = useAuth();
-  const { tips, setListId, reloadTips } = useTips();
+  const { tips, loadTips } = useTips();
   const router = useRouter();
   useEffect(() => {
     if (!token) {
       router.push("/login");
       return;
     }
-    setListId(username);
-    reloadTips();
+    loadTips(username);
   });
 
   return (

@@ -38,6 +38,7 @@ export const Tips: React.FC = () => {
       <div className="flex flex-wrap my-5 mx-3">
         {tags.map((tag) => (
           <ClickTag
+            key={tag}
             text={tag}
             onClick={() => setFilter(filter === tag ? undefined : tag)}
             highlighted={tag === filter}
@@ -47,6 +48,7 @@ export const Tips: React.FC = () => {
       {!filter &&
         categories.map((category) => (
           <TipsList
+            key={category}
             title={category}
             icon={icon(category)}
             expanded={category === selectedCategory}
@@ -89,7 +91,7 @@ const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick })
             tips.map((tip) => {
               const selected = selectedTip?.name === tip.name;
               return (
-                <TipsListItem onClick={() => setSelectedTip(tip)}>
+                <TipsListItem onClick={() => setSelectedTip(tip)} key={tip.name}>
                   {tip.name}
                   <FontAwesomeIcon icon={selected ? faAngleDown : faAngleLeft} className="float-right mt-1" />
                   {selected && <ItemDescription tip={tip} />}
@@ -117,8 +119,14 @@ const ItemDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
           <Tag text={tag} />
         ))}
       </div>
-      <div className="hidden sm:block cursor-pointer font-bold"><a href={tip.mapsUrl} target="_blank">Navigation &rarr;</a></div>
-      <a className="cursor-pointer" href={tip.mapsUrl} target="_blank"><MiniMap tip={tip} /></a>
+      <div className="hidden sm:block cursor-pointer font-bold">
+        <a href={tip.mapsUrl} target="_blank">
+          Navigation &rarr;
+        </a>
+      </div>
+      <a className="cursor-pointer" href={tip.mapsUrl} target="_blank">
+        <MiniMap tip={tip} />
+      </a>
     </div>
   );
 };
