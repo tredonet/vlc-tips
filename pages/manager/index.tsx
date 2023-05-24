@@ -1,13 +1,17 @@
-import { Card, Tag } from "components";
+import { icon } from "assets";
+import { TipsTitle, TipsListContainer, TipsListItem, Button, Tag } from "components";
+import { EditTip } from "features";
 import { useTips } from "hooks";
 import { useAuth } from "hooks/useAuth";
 import type { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { capitalize } from "utils";
+import { Tip } from "types";
+import { uniqueValues } from "utils";
 
 const Manager: NextPage = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
+  const [tip, setTip] = useState<Tip | null>(null);
   const { token, username } = useAuth();
   const { tips, loadTips } = useTips();
   const router = useRouter();
@@ -17,27 +21,60 @@ const Manager: NextPage = () => {
       return;
     }
     loadTips(username);
-  });
+  }, []);
+  const categories = uniqueValues(tips?.map((tip) => tip.kind) || []);
 
+  type TipsProps = {
+    title: string;
+    icon: SVGElement;
+    tips?: Tip[];
+  };
+  const setSelectedTip = (tip: Tip) => {
+    setTip(tip);
+    setIsOpen((x) => !x);
+  };
+  const onNewTip = () => {
+    setSelectedTip({
+      name: "",
+      kind: "Restaurant",
+      description: "",
+      tags: [],
+      geometry: {
+        lat: 0,
+        lng: 0,
+      },
+    });
+    setIsOpen(true);
+  };
+  const TipsList: React.FC<TipsProps> = ({ title, icon, tips }) => (
+    <>
+      <TipsTitle icon={icon}>{title}</TipsTitle>
+      <TipsListContainer className="cursor-pointer">
+        {tips &&
+          tips.map((tip) => (
+            <TipsListItem key={tip.name} onClick={() => setSelectedTip(tip)}>
+              {tip.name}
+            </TipsListItem>
+          ))}
+      </TipsListContainer>
+    </>
+  );
   return (
-    <div className="flex flex-wrap gap-6 justify-between">
-      {tips?.map((tip) => (
-        <Card className="basis-80" title={tip.name}>
-          <div className="border-b border-gray-200 pb-2">Kind: {tip.kind}</div>
-          {tip.type &&
-            Object.entries(tip.type).map(([key, val]: any) => (
-              <div className="border-b border-gray-200 pb-2">
-                {capitalize(key)}: {val}
-              </div>
-            ))}
-          <div className="my-2">{tip.description}</div>
-          <div className="flex flex-wrap my-1">
-            {tip.tags.map((tag) => (
-              <Tag text={tag} />
-            ))}
-          </div>
-        </Card>
+    <div className="flex justify-center mt-12">
+      {categories.map((category) => (
+        <div>
+          <TipsList
+            key={category}
+            title={category}
+            icon={icon(category)}
+            tips={tips?.filter((tip) => tip.kind === category)}
+          />
+        </div>
       ))}
+      <Button className="bg-teal-600 h-min w-max text-white px-4 hover:bg-teal-500" onClick={onNewTip}>
+        Add Tip
+      </Button>
+      <EditTip isOpen={isOpen} setIsOpen={setIsOpen} tip={tip} />
     </div>
   );
 };

@@ -12,7 +12,7 @@ import { icon } from "assets";
 export const Tips: React.FC = () => {
   const [filter, setFilter] = useState<string | undefined>();
   const { tips, selectedCategory, setSelectedCategory } = useTips();
-  const tags = ["Spanish", "Drinks", "Outdoors", "Coffee", "Paella", "Live Music"];
+  const tags = ["Spanish", "Drinks", "Tapas", "Paella"];
   const categories = uniqueValues(tips?.map((tip) => tip.kind) || []);
 
   return (
@@ -95,7 +95,7 @@ const ItemDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
             {capitalize(key)}: {val}
           </div>
         ))}
-      <div className=" my-2">{tip.description}</div>
+      <div className="my-2">{tip.description}</div>
       <div className="flex flex-wrap my-1">
         {tip.tags.map((tag) => (
           <Tag text={tag} />
