@@ -13,7 +13,7 @@ class UserController {
     const { username, password } = body;
     if (!username || !password) throw new BadRequestException('fields_missing');
     const existingUser = await User.find({ username });
-    if (existingUser) throw new BadRequestException('user_already_exists');
+    if (existingUser.length) throw new BadRequestException('user_already_exists');
     const hash = hashSync(password);
     const user = new User({ username, password: hash, admin: false });
     await user.save();

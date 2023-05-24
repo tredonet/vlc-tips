@@ -39,6 +39,7 @@ const Manager: NextPage = () => {
       kind: "Restaurant",
       description: "",
       tags: [],
+      //@ts-ignore
       geometry: {
         lat: 0,
         lng: 0,
