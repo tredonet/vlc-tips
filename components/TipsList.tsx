@@ -20,7 +20,7 @@ export const TipsListContainer: React.FC<ComponentProps<"ul">> = ({ children, cl
 );
 
 export const TipsListItem: React.FC<ComponentProps<"li">> = ({ children, className, ...props }) => (
-  <li className={`font-patrick text-white py-1 pl-4 sm:pl-16 pr-4 ${className}`} {...props}>
+  <li className={`font-patrick text-white pt-1 px-4 ${className}`} {...props}>
     {children}
   </li>
 );

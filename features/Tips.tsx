@@ -1,7 +1,7 @@
 import { useTips } from "hooks";
 import { capitalize, uniqueValues } from "utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { Tip } from "types";
 import Eye from "../public/icons/eye.svg";
 import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag } from "components";
@@ -73,11 +73,16 @@ const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick })
             tips.map((tip) => {
               const selected = selectedTip?.name === tip.name;
               return (
-                <TipsListItem onClick={() => setSelectedTip(tip)} key={tip.name}>
-                  {tip.name}
-                  <FontAwesomeIcon icon={selected ? faAngleDown : faAngleLeft} className="float-right mt-1" />
+                <>
+                  <TipsListItem onClick={() => setSelectedTip(tip)} key={tip.name} className="flex justify-between">
+                    <div>
+                      <FontAwesomeIcon icon={selected ? faAngleDown : faAngleRight} className="mt-1 mr-4" />
+                      {tip.name}
+                    </div>
+                    {tip.type && <Tag text={Object.values(tip.type)[0]} className="w-min" />}
+                  </TipsListItem>
                   {selected && <ItemDescription tip={tip} />}
-                </TipsListItem>
+                </>
               );
             })}
         </TipsListContainer>
@@ -86,9 +91,9 @@ const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick })
   );
 };
 
-const ItemDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
+export const ItemDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
   return (
-    <div className="py-2 text-base">
+    <div className="font-patrick text-white p-4 py-2 text-base">
       {tip.type &&
         Object.entries(tip.type).map(([key, val]: any) => (
           <div>
