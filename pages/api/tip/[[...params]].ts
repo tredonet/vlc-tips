@@ -18,13 +18,18 @@ class TipController {
     return await tip.save();
   }
 
+  @Post("/:id/delete")
+  @Auth()
+  async deleteTip(@Param("id") id: string) {
+    return await Tip.findByIdAndDelete(id);
+  }
+
   @Post()
   @Auth()
   async createTip(@Body() body: any) {
     const tip = new Tip(body);
     return await tip.save();
   }
-
 }
 
 export default createHandler(TipController);

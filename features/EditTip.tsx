@@ -32,6 +32,19 @@ export const EditTip: React.FC<EditTipProps> = ({ tip: _tip, isOpen, setIsOpen }
     loadTips(username);
   };
 
+  const deleteTip = async () => {
+    //@ts-ignore it has an id
+    if (!tip._id) return;
+    confirm("Are you sure you want to delete this tip?");
+    //@ts-ignore it has an id
+    await fetch(`/api/tip/${tip._id}/delete`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+    });
+    setIsOpen(false);
+    loadTips(username);
+  };
+
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="fixed inset-0 bg-black opacity-50"></div>
@@ -160,6 +173,11 @@ export const EditTip: React.FC<EditTipProps> = ({ tip: _tip, isOpen, setIsOpen }
               type="submit"
               className="bg-teal-600 hover:bg-teal-500 ext-sm font-medium  text-white mt-2 p-2.5 flex-1 rounded-md outline-none border ring-offset-2 ring-teal-600 focus:ring-2">
               Update Tip
+            </button>
+            <button
+              onClick={() => deleteTip()}
+              className="bg-red-600 hover:bg-red-500 ext-sm font-medium  text-white mt-2 p-2.5 flex-1 rounded-md outline-none border ring-offset-2 ring-red-600 focus:ring-2">
+              Delete Tip
             </button>
             <button
               className="mt-2 p-2.5 flex-1 text-gray-800 rounded-md outline-none border ring-offset-2 ring-teal-600 focus:ring-2"
