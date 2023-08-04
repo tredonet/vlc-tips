@@ -1,4 +1,9 @@
-import { ComponentProps } from "react";
+import { Map } from "features";
+import { Marker } from "components";
+import { ComponentProps, useEffect, useState } from "react";
+import { Tip } from "types";
+import { capitalize } from "utils";
+import { Tag } from "./Tag";
 
 type TipsTitleProps = {
   icon: any;
@@ -24,3 +29,36 @@ export const TipsListItem: React.FC<ComponentProps<"li">> = ({ children, classNa
     {children}
   </li>
 );
+
+export const TipDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
+  const [setMarker, setSetMarker] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setSetMarker(true), 200);
+  });
+  return (
+    <div className="font-patrick text-white p-4 py-2 text-base">
+      {tip.type &&
+        Object.entries(tip.type).map(([key, val]: any) => (
+          <div>
+            {capitalize(key)}: {val}
+          </div>
+        ))}
+      <div className="my-2">{tip.description}</div>
+      <div className="flex flex-wrap my-1">
+        {tip.tags.map((tag) => (
+          <Tag text={tag} />
+        ))}
+      </div>
+      <div className="hidden sm:block cursor-pointer font-bold">
+        <a href={tip.mapsUrl} target="_blank">
+          Navigation &rarr;
+        </a>
+      </div>
+      <a className="cursor-pointer" href={tip.mapsUrl} target="_blank">
+        <Map zoom={13} center={tip.geometry} options={{gestureHandling: "none"}} className="w-full h-60 block sm:hidden">
+          {setMarker && <Marker tip={tip} />}
+        </Map>
+      </a>
+    </div>
+  );
+};

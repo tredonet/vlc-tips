@@ -19,12 +19,13 @@ export type TipKind = "Landmark" | "Restaurant" | "Sightseeing" | "Nightlife" | 
 export type TipType = { [key: string]: string };
 
 export interface Tip {
+  _id?: string;
   name: string;
   kind: TipKind;
   listId: string;
   description: string;
   tags: string[];
-  geometry: google.maps.LatLngAltitudeLiteral;
+  geometry: Omit<google.maps.LatLngAltitudeLiteral, "altitude">;
   type?: TipType;
   openingHours?: OpeningHours;
   placeId?: string;

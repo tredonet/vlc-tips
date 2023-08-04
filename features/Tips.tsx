@@ -1,11 +1,10 @@
 import { useTips } from "hooks";
-import { capitalize, uniqueValues } from "utils";
+import { uniqueValues } from "utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { Tip } from "types";
 import Eye from "../public/icons/eye.svg";
-import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag } from "components";
-import { MiniMap } from "./MiniMap";
+import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag, TipDescription } from "components";
 import { useState } from "react";
 import { icon } from "assets";
 
@@ -51,7 +50,7 @@ export const Tips: React.FC = () => {
   );
 };
 
-type TipsProps = {
+type TipsListProps = {
   title: string;
   icon: SVGElement;
   tips?: Tip[];
@@ -59,7 +58,7 @@ type TipsProps = {
   onClick: any;
 };
 
-const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick }) => {
+const TipsList: React.FC<TipsListProps> = ({ title, icon, tips, expanded, onClick }) => {
   const { selectedTip, setSelectedTip } = useTips();
 
   return (
@@ -81,7 +80,7 @@ const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick })
                     </div>
                     {tip.type && <Tag text={Object.values(tip.type)[0]} className="w-min" />}
                   </TipsListItem>
-                  {selected && <ItemDescription tip={tip} />}
+                  {selected && <TipDescription tip={tip} />}
                 </>
               );
             })}
@@ -91,29 +90,3 @@ const TipsList: React.FC<TipsProps> = ({ title, icon, tips, expanded, onClick })
   );
 };
 
-export const ItemDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
-  return (
-    <div className="font-patrick text-white p-4 py-2 text-base">
-      {tip.type &&
-        Object.entries(tip.type).map(([key, val]: any) => (
-          <div>
-            {capitalize(key)}: {val}
-          </div>
-        ))}
-      <div className="my-2">{tip.description}</div>
-      <div className="flex flex-wrap my-1">
-        {tip.tags.map((tag) => (
-          <Tag text={tag} />
-        ))}
-      </div>
-      <div className="hidden sm:block cursor-pointer font-bold">
-        <a href={tip.mapsUrl} target="_blank">
-          Navigation &rarr;
-        </a>
-      </div>
-      <a className="cursor-pointer" href={tip.mapsUrl} target="_blank">
-        <MiniMap tip={tip} />
-      </a>
-    </div>
-  );
-};

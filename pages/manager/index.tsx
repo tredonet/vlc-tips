@@ -16,11 +16,11 @@ const Manager: NextPage = () => {
   const { tips, loadTips } = useTips();
   const router = useRouter();
   useEffect(() => {
-    if (!token) {
-      router.push("/login");
-      return;
-    }
-    loadTips(username);
+    // if (!token) {
+    //   router.push("/login");
+    //   return;
+    // }
+    loadTips("Tonino");
   }, []);
   const categories = uniqueValues(tips?.map((tip) => tip.kind) || []);
 
@@ -36,14 +36,15 @@ const Manager: NextPage = () => {
   const onNewTip = () => {
     setSelectedTip({
       name: "",
+      listId: username,
       kind: "Restaurant",
       description: "",
       tags: [],
-      //@ts-ignore
       geometry: {
         lat: 0,
         lng: 0,
       },
+      mapsUrl:""
     });
     setIsOpen(true);
   };
