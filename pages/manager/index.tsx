@@ -16,11 +16,11 @@ const Manager: NextPage = () => {
   const { tips, loadTips } = useTips();
   const router = useRouter();
   useEffect(() => {
-    // if (!token) {
-    //   router.push("/login");
-    //   return;
-    // }
-    loadTips("Tonino");
+    if (!token) {
+      router.push("/login");
+      return;
+    }
+    loadTips(username);
   }, []);
   const categories = uniqueValues(tips?.map((tip) => tip.kind) || []);
 

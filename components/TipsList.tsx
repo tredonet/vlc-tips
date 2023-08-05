@@ -55,7 +55,7 @@ export const TipDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
         </a>
       </div>
       <a className="cursor-pointer" href={tip.mapsUrl} target="_blank">
-        <Map zoom={13} center={tip.geometry} options={{gestureHandling: "none"}} className="w-full h-60 block sm:hidden">
+        <Map zoom={13} center={tip.geometry} className="w-full h-60 block sm:hidden cursor-pointer">
           {setMarker && <Marker tip={tip} />}
         </Map>
       </a>

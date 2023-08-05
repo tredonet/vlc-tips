@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { Tip } from "types";
 import Eye from "../public/icons/eye.svg";
-import { TipsTitle, TipsListContainer, TipsListItem, Tag, ClickTag, TipDescription } from "components";
+import { TipsTitle, TipsListContainer, TipsListItem, Tag, TipDescription } from "components";
 import { useState } from "react";
 import { icon } from "assets";
 
@@ -18,7 +18,7 @@ export const Tips: React.FC = () => {
     <>
       <div className="flex flex-wrap my-5 mx-3">
         {tags.map((tag) => (
-          <ClickTag
+          <Tag
             key={tag}
             text={tag}
             onClick={() => setFilter(filter === tag ? undefined : tag)}
