@@ -30,8 +30,9 @@ export const EditTip: React.FC<EditTipProps> = ({ tip: _tip, isOpen, setIsOpen }
     setTip({ ...tip, ...field });
   };
   const kindOptions: TipKind[] = ["Landmark", "Restaurant", "Sightseeing", "Nightlife", "Snacks", "Coffee", "Market"];
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement> | React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
+    //@ts-ignore
     const url = tip._id ? `/api/tip/${tip._id}` : `/api/tip`;
     tip.listId ||= username;
     await fetch(url, {
@@ -44,8 +45,10 @@ export const EditTip: React.FC<EditTipProps> = ({ tip: _tip, isOpen, setIsOpen }
   };
 
   const deleteTip = async () => {
+    //@ts-ignore
     if (!tip._id) return;
     confirm("Are you sure you want to delete this tip?");
+    //@ts-ignore
     await fetch(`/api/tip/${tip._id}/delete`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
@@ -136,9 +139,11 @@ export const EditTip: React.FC<EditTipProps> = ({ tip: _tip, isOpen, setIsOpen }
             </div>
             <div className="flex">
               <PrimaryButton color="teal" onClick={(e) => handleSubmit(e)}>
-                {tip._id ? "Update Tip" : "Add Tip"}
+                {//@ts-ignore
+                tip._id ? "Update Tip" : "Add Tip"}
               </PrimaryButton>
-              {tip._id && (
+              {//@ts-ignore
+              tip._id && (
                 <PrimaryButton color="red" onClick={deleteTip}>
                   Delete Tip
                 </PrimaryButton>

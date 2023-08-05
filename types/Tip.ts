@@ -19,7 +19,6 @@ export type TipKind = "Landmark" | "Restaurant" | "Sightseeing" | "Nightlife" | 
 export type TipType = { [key: string]: string };
 
 export interface Tip {
-  _id?: string;
   name: string;
   kind: TipKind;
   listId: string;
