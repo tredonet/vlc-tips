@@ -2,20 +2,27 @@ import type { NextPage } from "next";
 import { useEffect, useMemo } from "react";
 import { useRouter } from "next/router";
 import { Map, Tips, Tour, WelcomeDialog } from "features";
-import { TipMarker } from "components";
+import { Marker } from "components";
 import { useTips } from "hooks";
 import { Tip } from "types";
 
 const Home: NextPage = () => {
   const router = useRouter();
   const { listId } = router.query;
-  const { loadTips, tips, selectedTip } = useTips();
+  const { setListId, tips, selectedTip, setSelectedTip, setSelectedCategory } = useTips();
   const center = useMemo(() => selectedTip?.geometry || { lat: 39.468, lng: -0.359 }, [selectedTip]);
   const zoom = useMemo(() => (selectedTip ? 16 : 14.9), [selectedTip]);
 
   useEffect(() => {
-    loadTips(listId?.toString() || "Tonino");
+    if(listId){
+      setListId(listId as string);
+    }
   }, [listId]);
+
+  const onClickMarker = (tip: Tip) => {
+    setSelectedTip(tip);
+    setSelectedCategory(tip.kind);
+  };
 
   return (
     <div className="flex">
@@ -25,7 +32,7 @@ const Home: NextPage = () => {
         <Tour />
       </div>
       <Map zoom={zoom} center={center} className="w-full h-screen hidden sm:block">
-        {tips && tips.map((tip: Tip) => <TipMarker tip={tip} key={tip.name} />)}
+        {tips && tips.map((tip: Tip) => <Marker tip={tip} key={tip.name} onClick={() => onClickMarker(tip)} />)}
       </Map>
     </div>
   );

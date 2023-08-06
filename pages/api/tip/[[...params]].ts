@@ -6,7 +6,8 @@ import { Auth, DB } from "middlewares";
 @DB()
 class TipController {
   @Get()
-  async listTips(@Query("listId") listId = "Tonino") {
+  async listTips(@Query("listId") listId: string) {
+    if (!listId) return [];
     return await Tip.find({ listId });
   }
 

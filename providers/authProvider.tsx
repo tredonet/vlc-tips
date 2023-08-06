@@ -1,4 +1,4 @@
-import React, { ComponentProps, createContext, Dispatch, useEffect, useState } from "react";
+import React, { ComponentProps, createContext, useState } from "react";
 
 export type AuthContextProps = {
   token: string;

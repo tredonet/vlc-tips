@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const Login: NextPage = () => {
   const router = useRouter();
-  const {  setToken, setUsername } = useAuth();
+  const { setToken, setUsername } = useAuth();
   const [error, setError] = useState(false);
   const onSubmit = (e: any) => {
     e.preventDefault();

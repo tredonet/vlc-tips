@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { Tip } from "types";
 import Eye from "../public/icons/eye.svg";
-import { TipsTitle, TipsListContainer, TipsListItem, Tag, TipDescription } from "components";
-import { useState } from "react";
+import { TipsTitle, TipsListContainer, TipsListItem, Tag, Marker, TipTags, TipType } from "components";
+import { Map } from "features";
+import React, { useEffect, useState } from "react";
 import { icon } from "assets";
 
 export const Tips: React.FC = () => {
@@ -59,8 +60,6 @@ type TipsListProps = {
 };
 
 const TipsList: React.FC<TipsListProps> = ({ title, icon, tips, expanded, onClick }) => {
-  const { selectedTip, setSelectedTip } = useTips();
-
   return (
     <>
       <TipsTitle icon={icon} onClick={onClick}>
@@ -68,25 +67,48 @@ const TipsList: React.FC<TipsListProps> = ({ title, icon, tips, expanded, onClic
       </TipsTitle>
       {expanded && (
         <TipsListContainer className="cursor-pointer">
-          {tips &&
-            tips.map((tip) => {
-              const selected = selectedTip?.name === tip.name;
-              return (
-                <>
-                  <TipsListItem onClick={() => setSelectedTip(tip)} key={tip.name} className="flex justify-between">
-                    <div>
-                      <FontAwesomeIcon icon={selected ? faAngleDown : faAngleRight} className="mt-1 mr-4" />
-                      {tip.name}
-                    </div>
-                    {tip.type && <Tag text={Object.values(tip.type)[0]} className="w-min" />}
-                  </TipsListItem>
-                  {selected && <TipDescription tip={tip} />}
-                </>
-              );
-            })}
+          {tips && tips.map((tip) => <Tip key={tip.name} tip={tip} />)}
         </TipsListContainer>
       )}
     </>
   );
 };
 
+const Tip: React.FC<{ tip: Tip }> = ({ tip }) => {
+  const { selectedTip, setSelectedTip } = useTips();
+  const selected = selectedTip?.name === tip.name;
+  return (
+    <>
+      <TipsListItem onClick={() => setSelectedTip(tip)} key={tip.name} className="flex justify-between">
+        <div>
+          <FontAwesomeIcon icon={selected ? faAngleDown : faAngleRight} className="mt-1 mr-4" />
+          {tip.name}
+        </div>
+        {tip.type && <Tag text={Object.values(tip.type)[0]} className="w-min " />}
+      </TipsListItem>
+      {selected && <TipDescription tip={tip} />}
+    </>
+  );
+};
+
+const TipDescription: React.FC<{ tip: Tip }> = ({ tip }) => {
+  const [setMarker, setSetMarker] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setSetMarker(true), 200);
+  });
+  return (
+    <div className="font-patrick text-white p-4 py-2 text-base flex flex-col gap-2">
+      <TipType tip={tip} />
+      {tip.description}
+      <TipTags tip={tip} />
+      <a href={tip.mapsUrl} target="_blank" className="hidden sm:block cursor-pointer font-bold">
+        Navigation &rarr;
+      </a>
+      <a className="cursor-pointer block sm:hidden" href={tip.mapsUrl} target="_blank">
+        <Map zoom={13} center={tip.geometry} className="w-full h-60">
+          {setMarker && <Marker tip={tip} />}
+        </Map>
+      </a>
+    </div>
+  );
+};

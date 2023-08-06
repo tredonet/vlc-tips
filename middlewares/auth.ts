@@ -4,7 +4,6 @@ import {
   createMiddlewareDecorator,
   ForbiddenException,
   NextFunction,
-  UnauthorizedException,
 } from "next-api-decorators";
 
 const JWT_SECRET = process.env.JWT_SECRET || "this-is-a-secret";
@@ -18,6 +17,5 @@ export const Auth = (admin = false) => createMiddlewareDecorator((req: NextApiRe
     //@ts-ignore
     if(admin && !decoded.data.admin) throw new ForbiddenException();
   });
-
   next();
 })();
