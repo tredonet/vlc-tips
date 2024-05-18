@@ -12,7 +12,7 @@ export const Tour: React.FC = () => {
       <Modal title="Go on a self-guided tour!" showModal={showModal} onClose={() => setShowModal(false)} big={true}>
         <iframe
           className="flex-1 w-full"
-          src="https://www.google.com/maps/d/embed?mid=1JSBPCzmm_jI9k9kMmFvH_4XShDzZj6c&ehbc=2E312F"
+          src="https://www.google.com/maps/d/embed?mid=1TSwZyi2MdYJe1y8a2jv8NzCdS6AspvY&ehbc=2E312F"
         />
       </Modal>
     </>
