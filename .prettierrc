@@ -1,7 +1,5 @@
 {
   "tabWidth": 2,
   "useTabs": false,
-  "endOfLine": "lf",
-  "bracketSameLine": true,
-  "printWidth": 120
+  "maxLineLength": 160
 }
