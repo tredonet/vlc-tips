@@ -1,5 +1,3 @@
-import { SignJWT, jwtVerify } from "jose";
-import { redirect } from "next/navigation";
 import { NextRequest, NextResponse } from "next/server";
 import { decrypt, encrypt } from "./lib";
 
