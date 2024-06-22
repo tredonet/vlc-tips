@@ -6,7 +6,7 @@ import { Marker, Tag } from "@/components";
 import Image from "next/image";
 import { icon } from "@/assets";
 import { Tip as ITip, TipKind } from "@/types";
-import  Map  from "@/features/Map";
+import Map from "@/features/Map";
 import { ComponentProps } from "react";
 
 type ListHeaderProps = {
@@ -84,6 +84,7 @@ const TipDescription = ({ tip }: { tip: ITip }) => {
           zoom={13}
           center={[tip.geometry.lat, tip.geometry.lng]}
           className="w-full h-60"
+          zoomControl={false}
         >
           <Marker tip={tip} />
         </Map>

@@ -7,6 +7,7 @@ import { ComponentProps } from "react";
 type MapProps = ComponentProps<"div"> & {
   center?: [number, number];
   zoom?: number;
+  zoomControl?: boolean;
 };
 
 export default function Map({
@@ -14,12 +15,14 @@ export default function Map({
   children,
   center = [39.468, -0.355],
   zoom = 15,
+  zoomControl = true,
 }: MapProps) {
   return (
     <MapContainer
       center={center}
       zoom={zoom}
       scrollWheelZoom={false}
+      zoomControl={zoomControl}
       className={className}
     >
       <TileLayer
