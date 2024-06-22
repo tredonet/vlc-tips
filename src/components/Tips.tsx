@@ -80,7 +80,11 @@ const TipDescription = ({ tip }: { tip: ITip }) => {
         href={tip.mapsUrl}
         target="_blank"
       >
-        <Map zoom={13} center={tip.geometry} className="w-full h-60">
+        <Map
+          zoom={13}
+          center={[tip.geometry.lat, tip.geometry.lng]}
+          className="w-full h-60"
+        >
           <Marker tip={tip} />
         </Map>
       </a>

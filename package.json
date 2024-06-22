@@ -13,10 +13,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.1",
-    "@react-google-maps/api": "^2.19.3",
-    "@vis.gl/react-google-maps": "^1.0.2",
     "bcryptjs": "^2.4.3",
-    "i": "^0.3.7",
     "jose": "^5.4.0",
     "leaflet": "^1.9.4",
     "leaflet-geosearch": "^4.0.0",
@@ -26,12 +23,10 @@
     "react": "^18",
     "react-dom": "^18",
     "react-leaflet": "^4.2.1",
-    "tailwindcss-animate": "^1.0.7",
-    "use-places-autocomplete": "^4.0.1"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",
-    "@types/google.maps": "^3.55.9",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/leaflet": "^1.9.12",
     "@types/node": "^20",

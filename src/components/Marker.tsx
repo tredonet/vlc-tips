@@ -1,7 +1,8 @@
 "use client";
-import { Marker as _Marker } from "@react-google-maps/api";
-import { marker } from "@/assets";
+
 import { Tip } from "@/types";
+import { Marker as _Marker } from "react-leaflet";
+import { Icon, PointExpression } from "leaflet";
 
 type MarkerProps = {
   tip: Tip;
@@ -9,14 +10,19 @@ type MarkerProps = {
   selected?: boolean;
 };
 
-export const Marker: React.FC<MarkerProps> = ({ tip, onClick, selected = false }) => {
-  const scaledSize = new google.maps.Size(48, 48);
+export const Marker = ({ tip, onClick, selected }: MarkerProps) => {
+  const iconSize: PointExpression = selected ? [48, 48] : [32, 32];
   return (
     <_Marker
-      position={tip.geometry}
-      icon={{ url: marker[tip.kind], scaledSize }}
-      onClick={onClick}
-      animation={!!onClick && selected ? google.maps.Animation.BOUNCE : undefined}
+      position={[tip.geometry.lat, tip.geometry.lng]}
+      icon={
+        new Icon({
+          iconUrl: `../../../${tip.kind.toLowerCase()}Marker.svg`,
+          iconSize,
+          iconAnchor: [16, 32],
+        })
+      }
+      eventHandlers={{ click: onClick }}
     />
   );
 };
