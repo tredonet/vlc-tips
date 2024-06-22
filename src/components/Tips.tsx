@@ -6,7 +6,7 @@ import { Marker, Tag } from "@/components";
 import Image from "next/image";
 import { icon } from "@/assets";
 import { Tip as ITip, TipKind } from "@/types";
-import { Map } from "@/features";
+import  Map  from "@/features/Map";
 import { ComponentProps } from "react";
 
 type ListHeaderProps = {

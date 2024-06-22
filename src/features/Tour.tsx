@@ -3,7 +3,7 @@ import { Button } from "@/components";
 import { useState } from "react";
 import { Modal } from "./Modal";
 
-export const Tour: React.FC = () => {
+export default function Tour() {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
@@ -26,4 +26,4 @@ export const Tour: React.FC = () => {
       </Modal>
     </>
   );
-};
+}

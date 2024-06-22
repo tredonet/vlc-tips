@@ -1,7 +1,15 @@
 import { connect } from "@/db";
 import { Tip } from "@/models";
 import { Tip as ITip } from "@/types";
-import { Map, Tips, WelcomeDialog, Tour, Markers } from "@/features";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("@/features/Map"), {
+  ssr: false,
+  loading: () => <div className="w-full h-screen bg-neutral-900"></div>,
+});
+const Markers = dynamic(() => import("@/features/Markers"), { ssr: false });
+const Tour = dynamic(() => import("@/features/Tour"), { ssr: false });
+const Tips = dynamic(() => import("@/features/TipsList"), { ssr: false });
 
 export default async function Home() {
   await connect();

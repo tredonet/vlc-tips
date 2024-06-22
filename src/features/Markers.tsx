@@ -5,10 +5,10 @@ import { Tip } from "@/types";
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
 
-export const Markers = ({ tips }: { tips: Tip[] }) => {
+export default function Markers({ tips }: { tips: Tip[] }) {
   const { selectTip, selectedTip } = useTip();
   const map = useMap();
-  
+
   useEffect(() => {
     if (selectedTip)
       map.flyTo([selectedTip.geometry.lat, selectedTip.geometry.lng], 16);
@@ -28,4 +28,4 @@ export const Markers = ({ tips }: { tips: Tip[] }) => {
       selected={selectedTip?.name === tip.name}
     />
   ));
-};
+}

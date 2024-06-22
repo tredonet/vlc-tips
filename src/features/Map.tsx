@@ -9,7 +9,7 @@ type MapProps = ComponentProps<"div"> & {
   zoom?: number;
 };
 
-export function Map({
+export default function Map({
   className,
   children,
   center = [39.468, -0.355],

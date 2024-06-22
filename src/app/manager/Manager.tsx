@@ -4,7 +4,7 @@ import { Tip as ITip } from "@/types";
 import { useRouter } from "next/navigation";
 import logout from "./logout";
 
-export function Manager({ tips }: { tips: ITip[] }) {
+export default function Manager({ tips }: { tips: ITip[] }) {
   const router = useRouter();
   const categories = Array.from(new Set(tips.map((tip) => tip.kind) || []));
   return (

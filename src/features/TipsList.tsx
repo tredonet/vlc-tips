@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useTip } from "@/providers";
 import { TipsListHeader, TipsListContainer, Tip } from "@/components";
 
-export const Tips = ({ tips }: { tips: ITip[] }) => {
+export default function Tips({ tips }: { tips: ITip[] }) {
   const [selectedCategory, selectCategory] = useState("Restaurant");
   const { selectedTip } = useTip();
   useEffect(
@@ -25,7 +25,7 @@ export const Tips = ({ tips }: { tips: ITip[] }) => {
       />
     );
   });
-};
+}
 
 type TipsListProps = {
   category: TipKind;
