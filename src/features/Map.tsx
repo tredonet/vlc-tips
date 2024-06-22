@@ -23,6 +23,7 @@ export default function Map({
       zoom={zoom}
       scrollWheelZoom={false}
       zoomControl={zoomControl}
+      touchZoom={zoomControl}
       className={className}
     >
       <TileLayer
