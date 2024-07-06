@@ -10,6 +10,9 @@ const Map = dynamic(() => import("@/features/Map"), {
 const Markers = dynamic(() => import("@/features/Markers"), { ssr: false });
 const Tour = dynamic(() => import("@/features/Tour"), { ssr: false });
 const Tips = dynamic(() => import("@/features/TipsList"), { ssr: false });
+const WelcomeDialog = dynamic(() => import("@/features/WelcomeDialog"), {
+  ssr: false,
+});
 
 export default async function Home() {
   await connect();
@@ -17,12 +20,12 @@ export default async function Home() {
   const tips = JSON.parse(JSON.stringify(_tips)) as ITip[];
   return (
     <div className="flex">
-      {/* <WelcomeDialog /> */}
+      <WelcomeDialog />
       <div className="container max-w-sm bg-neutral-700 overflow-scroll p-4 flex flex-col gap-4 h-screen text-xl">
         <Tips tips={tips} />
         <Tour />
       </div>
-      <Map className="w-full h-screen hidden sm:block">
+      <Map className="w-full h-screen hidden sm:block z-0">
         <Markers tips={tips} />
       </Map>
     </div>
