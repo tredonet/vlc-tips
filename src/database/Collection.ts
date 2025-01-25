@@ -1,5 +1,5 @@
 import { Tip } from "@/models";
-import { Collection as MongoCollection } from "mongodb";
+import { Collection as MongoCollection, ObjectId } from "mongodb";
 
 type Projection = Partial<Record<keyof Tip, 1 | 0>>;
 
@@ -22,8 +22,8 @@ export class Collection<T> {
     await this.collection.insertOne(document as any);
   }
 
-  public async updateOne(query: any, document: Partial<T>) {
-    await this.collection.updateOne(query, { $set: document });
+  public async updateOne(id: string, document: Partial<T>) {
+    await this.collection.updateOne({ _id: new ObjectId(id) }, { $set: document });
   }
 
   public async deleteOne(query: any) {

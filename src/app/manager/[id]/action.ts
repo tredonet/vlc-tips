@@ -2,6 +2,7 @@
 
 import { TipService } from "@/database";
 import { Tip, TipKind } from "@/models";
+import { ObjectId } from "mongodb";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
@@ -20,7 +21,7 @@ export async function editTip(prevState: any, formData: FormData) {
   };
   const tipId = formData.get("id") as string;
   try {
-    if (tipId) await tipService.updateOne(tip._id, tip);
+    if (tipId) await tipService.updateOne(tipId, tip);
     else await tipService.insertOne(tip);
 
     revalidatePath("/");
@@ -38,7 +39,7 @@ export async function deleteTip(tipId?: string) {
   if (!tipId) return { message: "Tip ID not provided." };
   const tipService = new TipService();
   try {
-    await tipService.deleteOne({ tipId });
+    await tipService.deleteOne({ _id: new ObjectId(tipId) });
     revalidatePath("/");
     revalidatePath(`/manager`);
     redirect("/manager");

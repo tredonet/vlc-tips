@@ -31,7 +31,6 @@ export function EditTip({ tip }: { tip?: Tip }) {
   );
 }
 
-type Optional<T, K extends keyof T> = Pick<Partial<T>, K> & Omit<T, K>;
 type FormProps = ComponentProps<"form"> & {
   tip?: Tip;
 };
