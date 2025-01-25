@@ -5,7 +5,7 @@ import Landmark from "../../public/landmark.svg";
 import Coffee from "../../public/coffee.svg";
 import Market from "../../public/market.svg";
 import Snacks from "../../public/snacks.svg";
-import { TipKind } from "@/types";
+import { TipKind } from "@/models";
 
 export const icon = (kind: TipKind) => {
   const icons = {

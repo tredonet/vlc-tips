@@ -5,11 +5,7 @@ const secretKey = process.env.JWT_SECRET ?? "SuperSecretKey";
 const key = new TextEncoder().encode(secretKey);
 
 export async function encrypt(payload: JWTPayload) {
-  return await new SignJWT(payload)
-    .setProtectedHeader({ alg: "HS256" })
-    .setIssuedAt()
-    .setExpirationTime("10 min from now")
-    .sign(key);
+  return await new SignJWT(payload).setProtectedHeader({ alg: "HS256" }).setIssuedAt().setExpirationTime("10 min from now").sign(key);
 }
 
 export async function decrypt(input: string) {

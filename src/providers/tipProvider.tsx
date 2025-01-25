@@ -1,12 +1,6 @@
 "use client";
-import { Tip } from "@/types";
-import React, {
-  ComponentProps,
-  createContext,
-  Dispatch,
-  useContext,
-  useState,
-} from "react";
+import { Tip } from "@/models";
+import React, { ComponentProps, createContext, Dispatch, useContext, useState } from "react";
 
 export type TipContextProps = {
   selectedTip: Tip | undefined;
@@ -18,8 +12,7 @@ export const TipContext = createContext<TipContextProps>({} as TipContextProps);
 export const TipProvider: React.FC<ComponentProps<"div">> = ({ children }) => {
   const [selectedTip, setSelectedTip] = useState<Tip>();
 
-  const selectTip = (tip: Tip) =>
-    setSelectedTip(tip == selectedTip ? undefined : tip);
+  const selectTip = (tip: Tip) => setSelectedTip(tip == selectedTip ? undefined : tip);
 
   const values = {
     selectedTip,

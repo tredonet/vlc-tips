@@ -1,4 +1,4 @@
-import { Tip } from "@/types";
+import { Tip } from "@/models";
 import L, { Icon } from "leaflet";
 import { GeoSearchControl, OpenStreetMapProvider } from "leaflet-geosearch";
 import { SearchResult } from "leaflet-geosearch/dist/providers/provider.js";
@@ -12,21 +12,14 @@ const ARROW_UP_KEY = 38;
 const ARROW_LEFT_KEY = 37;
 const ARROW_RIGHT_KEY = 39;
 
-const SPECIAL_KEYS = [
-  ENTER_KEY,
-  ESCAPE_KEY,
-  ARROW_DOWN_KEY,
-  ARROW_UP_KEY,
-  ARROW_LEFT_KEY,
-  ARROW_RIGHT_KEY,
-];
+const SPECIAL_KEYS = [ENTER_KEY, ESCAPE_KEY, ARROW_DOWN_KEY, ARROW_UP_KEY, ARROW_LEFT_KEY, ARROW_RIGHT_KEY];
 type Query = {
   query: string;
   data: unknown;
 };
 
 export const useSearchBox = () => {
-  const [tip, setTip] = useState<Omit<Tip, "_id"> | undefined>();
+  const [tip, setTip] = useState<Tip | undefined>();
   function SearchBox() {
     const provider = new OpenStreetMapProvider();
 
@@ -50,10 +43,7 @@ export const useSearchBox = () => {
 
       39.42 - 39.5 - 0.44 - -0.33;
       const _results = await provider!.search(query);
-      const results: SearchResult[] = _results.filter(
-        (r: SearchResult) =>
-          r.y > 39.42 && r.y < 39.5 && r.x > -0.44 && r.x < -0.33
-      );
+      const results: SearchResult[] = _results.filter((r: SearchResult) => r.y > 39.42 && r.y < 39.5 && r.x > -0.44 && r.x < -0.33);
       if (results && results.length > 0) {
         searchControl.showResult(results[0], query);
       }
@@ -68,15 +58,9 @@ export const useSearchBox = () => {
 
       if (query.length) {
         let results = await provider!.search({ query });
-        results = results.filter(
-          (r: SearchResult) =>
-            r.y > 39.42 && r.y < 39.5 && r.x > -0.44 && r.x < -0.33
-        );
+        results = results.filter((r: SearchResult) => r.y > 39.42 && r.y < 39.5 && r.x > -0.44 && r.x < -0.33);
         results = results.slice(0, searchControl.options.maxSuggestions);
-        searchControl.resultList.render(
-          results,
-          searchControl.options.resultFormat
-        );
+        searchControl.resultList.render(results, searchControl.options.resultFormat);
       } else {
         searchControl.resultList.clear();
       }
@@ -95,7 +79,6 @@ export const useSearchBox = () => {
         description: "",
         mapsUrl: "",
         tags: [],
-        listId: "Tonino",
       });
     });
     //@ts-ignore
@@ -103,9 +86,7 @@ export const useSearchBox = () => {
       map.addControl(searchControl);
       const clearButton = document.querySelector(".reset");
       clearButton?.addEventListener("click", () => {
-        map.eachLayer(
-          (layer) => layer instanceof L.Marker && map.removeLayer(layer)
-        );
+        map.eachLayer((layer) => layer instanceof L.Marker && map.removeLayer(layer));
         setTip(undefined);
       });
       return () => map.removeControl(searchControl);

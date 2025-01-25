@@ -1,5 +1,5 @@
 {
   "tabWidth": 2,
   "useTabs": false,
-  "maxLineLength": 160
+  "printWidth": 160
 }

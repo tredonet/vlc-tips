@@ -1,6 +1,5 @@
-import { connect } from "@/db";
+import { TipService, UserService } from "@/database";
 import { Tip } from "@/models";
-import { Tip as ITip } from "@/types";
 import dynamic from "next/dynamic";
 
 const Map = dynamic(() => import("@/features/Map"), {
@@ -15,9 +14,8 @@ const WelcomeDialog = dynamic(() => import("@/features/WelcomeDialog"), {
 });
 
 export default async function Home() {
-  await connect();
-  const _tips = await Tip.find({ listId: "Tonino" }, { _id: 0 });
-  const tips = JSON.parse(JSON.stringify(_tips)) as ITip[];
+  const tipService = new TipService();
+  const tips = await tipService.find({}, { _id: 0 });
   return (
     <div className="flex">
       <WelcomeDialog />

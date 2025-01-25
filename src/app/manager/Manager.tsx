@@ -1,6 +1,6 @@
 "use client";
 import { TipsListHeader, TipsListContainer, Tip, Button } from "@/components";
-import { Tip as ITip } from "@/types";
+import { Tip as ITip } from "@/models";
 import { useRouter } from "next/navigation";
 import logout from "./logout";
 
@@ -16,22 +16,14 @@ export default function Manager({ tips }: { tips: ITip[] }) {
             <TipsListHeader category={category} onClick={() => {}} />
             <TipsListContainer>
               {filteredTips.map((tip) => (
-                <Tip
-                  key={tip.name}
-                  tip={tip}
-                  selected={false}
-                  onClick={() => router.push(`/manager/${tip._id}`)}
-                />
+                <Tip key={tip.name} tip={tip} selected={false} onClick={() => router.push(`/manager/${tip._id}`)} />
               ))}
             </TipsListContainer>
           </div>
         );
       })}
 
-      <Button
-        onClick={() => router.push("/manager/new")}
-        className="bg-teal-500 h-min"
-      >
+      <Button onClick={() => router.push("/manager/new")} className="bg-teal-500 h-min">
         Add Tip
       </Button>
 

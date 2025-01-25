@@ -10,22 +10,9 @@ type MapProps = ComponentProps<"div"> & {
   zoomControl?: boolean;
 };
 
-export default function Map({
-  className,
-  children,
-  center = [39.468, -0.355],
-  zoom = 15,
-  zoomControl = true,
-}: MapProps) {
+export default function Map({ className, children, center = [39.468, -0.355], zoom = 15, zoomControl = true }: MapProps) {
   return (
-    <MapContainer
-      center={center}
-      zoom={zoom}
-      scrollWheelZoom={false}
-      zoomControl={zoomControl}
-      touchZoom={zoomControl}
-      className={className}
-    >
+    <MapContainer center={center} zoom={zoom} scrollWheelZoom={false} zoomControl={zoomControl} touchZoom={zoomControl} className={className}>
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

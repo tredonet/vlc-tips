@@ -1,24 +1,35 @@
-import mongoose, { model, Schema } from "mongoose";
-import { Tip as _Tip } from "@/types";
+import { ObjectId } from "mongodb";
 
-interface ITip extends _Tip {}
+export type OpeningHoursPeriodDetail = {
+  day: number;
+  time: string;
+};
 
-const TipSchema = new Schema({
-  _id: { type: String, required: false },
-  name: { type: String, required: true },
-  listId: { type: String, required: true },
-  kind: { type: String, requires: true },
-  description: { type: String, required: true },
-  tags: { type: [String], required: true },
-  geometry: {
-    type: { altitude: Number, lat: Number, lng: Number },
-    required: true,
-  },
-  type: { type: Object, required: false },
-  openingHours: { type: Object, required: false },
-  placeId: { type: String, required: false },
-  mapsUrl: { type: String, required: true },
-  website: { type: String, required: false },
-});
+export type OpeningHoursPeriod = {
+  open: OpeningHoursPeriodDetail;
+  close: OpeningHoursPeriodDetail;
+};
 
-export const Tip = mongoose.models.Tip || model<ITip>("Tip", TipSchema);
+export type OpeningHours = {
+  open_now: boolean;
+  periods: OpeningHoursPeriod[];
+  weekday_text: string[];
+};
+
+export type TipKind = "Landmark" | "Restaurant" | "Sightseeing" | "Nightlife" | "Snacks" | "Coffee" | "Market";
+
+export type TipType = { [key: string]: string };
+
+export interface Tip {
+  _id?: ObjectId;
+  name: string;
+  kind: TipKind;
+  description: string;
+  tags: string[];
+  geometry: { lat: number; lng: number };
+  type?: TipType;
+  openingHours?: OpeningHours;
+  placeId?: string;
+  mapsUrl: string;
+  website?: string;
+}

@@ -1,8 +1,7 @@
-import { connect } from "@/db";
 import { Tip } from "@/models";
-import { Tip as ITip } from "@/types";
 import { redirect } from "next/navigation";
 import { EditTip } from "./EditTip";
+import { TipService } from "@/database";
 
 type Params = {
   params: {
@@ -12,9 +11,7 @@ type Params = {
 
 export default async function Page({ params }: Params) {
   const { id } = params;
-  await connect();
-  const _tip = await Tip.findById(id);
-  const tip = JSON.parse(JSON.stringify(_tip)) as ITip;
-  if (!tip && id !== "new") redirect("/manager");
+  const tipService = new TipService();
+  const tip = await tipService.findOne({ _id: id });
   return <EditTip tip={tip} />;
 }

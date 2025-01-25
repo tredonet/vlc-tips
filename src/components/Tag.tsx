@@ -5,12 +5,7 @@ type TagType = {
   highlighted?: boolean;
 };
 
-export const Tag = ({
-  text,
-  className = "",
-  onClick,
-  highlighted = false,
-}: TagType) => (
+export const Tag = ({ text, className = "", onClick, highlighted = false }: TagType) => (
   <div
     onClick={onClick}
     className={`

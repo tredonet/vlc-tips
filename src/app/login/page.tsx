@@ -8,13 +8,7 @@ export default function LoginPage() {
       <form className="mx-auto bg-white p-4 rounded-2xl" action={formAction}>
         <div className="m-4">
           <label className="sr-only">Username</label>
-          <input
-            className="border-solid border border-gray-400 rounded px-2 py-3"
-            id="username"
-            name="username"
-            placeholder="Username"
-            required
-          />
+          <input className="border-solid border border-gray-400 rounded px-2 py-3" id="username" name="username" placeholder="Username" required />
         </div>
         <div className="m-4">
           <label className="sr-only">Password</label>
@@ -28,10 +22,7 @@ export default function LoginPage() {
           />
         </div>
         <div className="m-4 flex items-center">
-          <button
-            className="bg-gray-500 hover:bg-gray-600 text-white font-bold w-full py-3"
-            type="submit"
-          >
+          <button className="bg-gray-500 hover:bg-gray-600 text-white font-bold w-full py-3" type="submit">
             Sign in
           </button>
         </div>

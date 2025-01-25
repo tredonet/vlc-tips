@@ -1,6 +1,6 @@
 "use client";
 
-import { Tip } from "@/types";
+import { Tip } from "@/models";
 import { Marker as _Marker } from "react-leaflet";
 import { Icon, PointExpression } from "leaflet";
 
